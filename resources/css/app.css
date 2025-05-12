@@ -556,8 +556,9 @@ html {
     --popover: oklch(0.145 0 0);
     --popover-foreground: oklch(0.985 0 0);
     --primary: oklch(0.985 0 0);
+    --true-primary: oklch(0.54 0.09 194.77);
     /* --true-primary: oklch(0.54 0.15 249.67); */
-    --true-primary: oklch(0.59 0.23 278.87);
+    /* --true-primary: oklch(0.59 0.23 278.87); */
     --true-primary-two: oklch(0.39 0.15 266.19);
     --true-primary-three: oklch(0.38 0.03 237.56);
     --true-primary-four: oklch(0.74 0.17 58.85);
