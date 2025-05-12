@@ -84,9 +84,9 @@ export function MyNavbar({ className }: { className?: string }) {
                             <Link prefetch href={`/contact`}>
                                 <MenuItem setActive={setActive} active={active} item="Contact Us">
                                     <div className="flex flex-col space-y-4 text-sm">
-                                        <HoveredLink href="/contact">Project Inquiry?</HoveredLink>
-                                        <HoveredLink href="/contact">Get Support?</HoveredLink>
-                                        <HoveredLink href="/contact">Location (Map)</HoveredLink>
+                                        <HoveredLink href="/contact#Project-Inquiry">Project Inquiry?</HoveredLink>
+                                        <HoveredLink href="/contact#Get-Support">Get Support?</HoveredLink>
+                                        <HoveredLink href="/contact#contact-google-map">Location (Map)</HoveredLink>
                                     </div>
                                 </MenuItem>
                             </Link>

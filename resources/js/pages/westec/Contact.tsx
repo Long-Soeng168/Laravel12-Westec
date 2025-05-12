@@ -56,7 +56,7 @@ const Contact = () => {
             <section>
                 <img src="/assets/westec/images/contact-1.png" alt="" />
             </section>
-            <section>
+            <section id="Project-Inquiry">
                 <Headline title="Project Inquiry?" />
                 <div className="bg-primary px-4 py-4 text-white lg:px-16">
                     <div className="grid grid-cols-1 gap-4 gap-x-8 md:grid-cols-3">
@@ -163,7 +163,7 @@ to streamline solutions and power up your business potential."
                 bg="bg-true-primary-four"
                 showButton={false}
             />
-            <section>
+            <section id="Get-Support">
                 <h1 className="my-6 inline-block border-[#273892] px-4 text-2xl font-semibold text-[#273892] lg:px-16">{t('Get Support?')}</h1>
                 <div className="bg-primary px-4 py-4 text-white lg:px-16">
                     <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
@@ -236,7 +236,7 @@ to streamline solutions and power up your business potential."
             {/*End content */}
 
             {application_info.google_map && (
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center" id="contact-google-map">
                     <div className="w-full rounded-none">
                         <iframe
                             src={application_info.google_map}
