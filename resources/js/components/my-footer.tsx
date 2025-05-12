@@ -10,7 +10,7 @@ const MyFooter = () => {
                 <div className="mx-auto grid max-w-[2000px] grid-cols-1 gap-8 px-4 lg:grid-cols-4 lg:px-16">
                     {/* Contact Section */}
                     <div className="grid w-full grid-cols-1">
-                        <img src="/assets/westec/images/Logo.png" alt="Angkor Wildlife & Aquarium" className="mb-4 w-48" />
+                        <img src={`/assets/images/application_info/${application_info.image}`} alt="" className="mb-4 w-48" />
                         <div className="text-sm leading-relaxed text-gray-500 md:text-base 2xl:text-xl">
                             <p
                                 dangerouslySetInnerHTML={{
