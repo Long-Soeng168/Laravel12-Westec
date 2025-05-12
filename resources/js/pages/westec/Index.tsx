@@ -4,11 +4,11 @@ import useTranslation from '@/hooks/use-translation';
 import { usePage } from '@inertiajs/react';
 import BlogsList from './components/blogs-list';
 import { ContactSection } from './components/contact-section';
+import EventList from './components/event-list';
 import { FeatureSection } from './components/feature-section';
 import Headline from './components/headline';
 import MyBoosters from './components/my-boosters';
 import WestecLayout from './layout/layout';
-import EventList from './components/event-list';
 const images = [
     {
         id: '1',
@@ -47,22 +47,35 @@ const images = [
     },
 ];
 const Index = () => {
-    const { security_detail, smart_home_detail, commercial_detail, it_solution_detail, partners_detail, clients_detail, news_detail, events_detail } =
-        usePage().props;
+    const {
+        banners,
+        security_detail,
+        smart_home_detail,
+        commercial_detail,
+        it_solution_detail,
+        partners_detail,
+        clients_detail,
+        news_detail,
+        events_detail,
+        solution_boosters,
+    } = usePage().props;
     const { t, currentLocale } = useTranslation();
     return (
         <WestecLayout>
-            <MySlide images={images} />
+            <MySlide images={banners} />
             {security_detail?.title && <FeatureSection item={security_detail} defaultDropDown={true} />}
             {smart_home_detail?.title && <FeatureSection item={smart_home_detail} defaultDropDown={false} />}
 
-            <ContactSection />
+            <ContactSection bg="bg-primary" title="Smarter solutions start here!
+Find out what Westec can do for you." />
+
             {commercial_detail?.title && <FeatureSection item={commercial_detail} defaultDropDown={false} />}
             {it_solution_detail?.title && <FeatureSection item={it_solution_detail} defaultDropDown={false} />}
 
-            <ContactSection bg="bg-primary" />
+            <ContactSection title="Do you want a future-ready technology solutions 
+that move your business forward?" />
 
-            <MyBoosters />
+            <MyBoosters solution_boosters={solution_boosters} />
             <div id="partners"></div>
             <div className="mt-16">
                 <Headline title={t('Our Partners')} />

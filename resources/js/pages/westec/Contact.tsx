@@ -157,7 +157,12 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-            <ContactSection bg="bg-amber-500" showButton={false} />
+            <ContactSection
+                title="Partner with Westec – your trusted system integrator –
+to streamline solutions and power up your business potential."
+                bg="bg-true-primary-four"
+                showButton={false}
+            />
             <section>
                 <h1 className="my-6 inline-block border-[#273892] px-4 text-2xl font-semibold text-[#273892] lg:px-16">{t('Get Support?')}</h1>
                 <div className="bg-primary px-4 py-4 text-white lg:px-16">

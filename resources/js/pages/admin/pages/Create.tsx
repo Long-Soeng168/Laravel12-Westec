@@ -242,7 +242,7 @@ export default function Create() {
                         )}
                     /> */}
                     {/* Start Short Description */}
-                    <div key={editorKey} className="space-y-8">
+                    <div key={'short_description' + editorKey} className="space-y-8">
                         <div>
                             <p className="mb-1 text-sm font-medium">{t('Short Description')}</p>
                             <MyCkeditor5 data={short_description} setData={setShort_description} />
@@ -594,7 +594,7 @@ export default function Create() {
                         </div>
                     )}
                     {/* Start Long Description */}
-                    <div key={editorKey} className="space-y-8">
+                    <div key={'long_description' + editorKey} className="space-y-8">
                         <div>
                             <p className="mb-1 text-sm font-medium">{t('Long Description')}</p>
                             <MyCkeditor5 data={long_description} setData={setLong_description} />

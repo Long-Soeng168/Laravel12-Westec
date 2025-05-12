@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\FrontPageController;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Career;
 use App\Models\Link;
 use App\Models\Page;
+use App\Models\PagePosition;
 use App\Models\Post;
 use App\Models\Team;
 use App\Models\TeamCategory;
@@ -54,6 +56,15 @@ class WestecController extends Controller
             ->with('images')
             ->orderBy('id', 'desc')
             ->get();
+
+        $solution_boosters = Page::where('position_code', 'SOLUTION-BOOSTERS')
+            ->where('parent_id', null)
+            ->where('status', 'active')
+            ->with('images', 'children.images')
+            ->orderBy('id', 'desc')
+            ->get();
+
+        $banners = Banner::where('position_code', 'TOP_HOMEPAGE')->where('status', 'active')->get();
         return Inertia::render('westec/Index', [
             'security_detail' => $security_detail,
             'smart_home_detail' => $smart_home_detail,
@@ -63,6 +74,8 @@ class WestecController extends Controller
             'clients_detail' => $clients_detail,
             'news_detail' => $news_detail,
             'events_detail' => $events_detail,
+            'banners' => $banners,
+            'solution_boosters' => $solution_boosters,
         ]);
     }
 
@@ -124,12 +137,15 @@ class WestecController extends Controller
             ->where('status', 'active')
             ->orderBy('order_index')
             ->first();
+        $banners = Banner::where('position_code', 'TOP_HOMEPAGE')->where('status', 'active')->get();
+
         // return $our_commitment_detail;
         return Inertia::render('westec/Solutions', [
             'security_detail' => $security_detail,
             'smart_home_detail' => $smart_home_detail,
             'commercial_detail' => $commercial_detail,
             'it_solution_detail' => $it_solution_detail,
+            'banners' => $banners,
         ]);
     }
     public function case_studies()

@@ -13,12 +13,20 @@ const Solutions = () => {
             {banking_detail?.title && <CaseStudySection item={banking_detail} defaultDropDown={true} />}
             {embassy_detail?.title && <CaseStudySection item={embassy_detail} defaultDropDown={false} />}
 
-            <ContactSection />
+            <ContactSection
+                title="Ready to transform your operations
+with Westec’s expertise?"
+                bg="bg-true-primary-three"
+            />
 
             {microfinance_detail?.title && <CaseStudySection item={microfinance_detail} defaultDropDown={false} />}
             {manufacturing_detail?.title && <CaseStudySection item={manufacturing_detail} defaultDropDown={false} />}
 
-            <ContactSection />
+            <ContactSection
+                title="From idea to implementation —
+Westec is your tech partner."
+                bg="bg-true-primary-three"
+            />
 
             {construction_detail?.title && <CaseStudySection item={construction_detail} defaultDropDown={false} />}
             {entertainment_detail?.title && <CaseStudySection item={entertainment_detail} defaultDropDown={false} />}

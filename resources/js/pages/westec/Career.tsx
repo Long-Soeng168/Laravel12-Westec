@@ -17,7 +17,11 @@ const Career = () => {
                     </>
                 ))}
 
-            <ContactSection />
+            <ContactSection
+                title="Kickstart your career with Westec —
+a trusted system integrator shaping tomorrow."
+                bg="bg-true-primary-five"
+            />
             <CareerList careers={careers} />
         </WestecLayout>
     );
