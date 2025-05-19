@@ -261,7 +261,7 @@ export default function Create({
                             )}
                         />
                     </div>
-
+{/* 
                     <div className="col-span-6">
                         <FormField
                             control={form.control}
@@ -334,10 +334,10 @@ export default function Create({
                                 </FormItem>
                             )}
                         />
-                    </div>
+                    </div> */}
                 </div>
 
-                <FormField
+                {/* <FormField
                     control={form.control}
                     name="short_description"
                     render={({ field }) => (
@@ -363,9 +363,9 @@ export default function Create({
                             <FormMessage>{errors.short_description_kh && <div>{errors.short_description_kh}</div>}</FormMessage>
                         </FormItem>
                     )}
-                />
+                /> */}
 
-                <FormField
+                {/* <FormField
                     control={form.control}
                     name="image"
                     render={({ field }) => (
@@ -420,9 +420,9 @@ export default function Create({
                             )}
                         </FormItem>
                     )}
-                />
+                /> */}
 
-                <FormField
+                {/* <FormField
                     control={form.control}
                     name="banner"
                     render={({ field }) => (
@@ -477,7 +477,7 @@ export default function Create({
                             )}
                         </FormItem>
                     )}
-                />
+                /> */}
                 {progress && <ProgressWithValue value={progress.percentage} position="start" />}
                 {setIsOpen && <MyDialogCancelButton onClick={() => setIsOpen(false)} />}
 

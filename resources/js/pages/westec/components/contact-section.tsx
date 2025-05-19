@@ -3,7 +3,7 @@ import useTranslation from '@/hooks/use-translation';
 export function ContactSection({
     bg = 'bg-primary',
     showButton = true,
-    title = 'Smarter solutions start here! Find out what Westec can do for you.',
+    title = '',
 }: {
     bg?: string;
     showButton?: boolean;

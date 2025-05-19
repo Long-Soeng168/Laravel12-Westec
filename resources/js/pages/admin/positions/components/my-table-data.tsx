@@ -52,8 +52,8 @@ const MyTableData = () => {
                         <TableRow>
                             <TableHead className="w-[50px]">{t('No')}</TableHead>
                             <TableHead className="text-left">{t('Action')}</TableHead>
-                            <TableHead>{t('Image')}</TableHead>
-                            <TableHead>{t('Banner')}</TableHead>
+                            {/* <TableHead>{t('Image')}</TableHead>
+                            <TableHead>{t('Banner')}</TableHead> */}
                             <TableHead onClick={() => handleSort('code')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Code')}
@@ -109,7 +109,7 @@ const MyTableData = () => {
                                         {hasPermission('team update') && <EditButton item={item} />}
                                     </span>
                                 </TableCell>
-                                <TableCell>
+                                {/* <TableCell>
                                     {item.image ? (
                                         <button
                                             onClick={() => {
@@ -163,7 +163,7 @@ const MyTableData = () => {
                                             className="size-10 object-contain"
                                         />
                                     )}
-                                </TableCell>
+                                </TableCell> */}
                                 <TableCell>{item.code || '---'}</TableCell>
                                 <TableCell>{item.name || '---'}</TableCell>
                                 <TableCell>{item.name_kh || '---'}</TableCell>

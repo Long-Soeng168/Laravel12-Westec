@@ -211,7 +211,7 @@ export default function Create() {
                                 <FormItem>
                                     <FormLabel>{t('Phone Number')}</FormLabel>
                                     <FormControl>
-                                        <Input placeholder={t('Phone Number')} type="text" {...field} />
+                                        <AutosizeTextarea placeholder={t('Phone Number')}  {...field} />
                                     </FormControl>
                                     <FormMessage>{errors.phone && <div>{errors.phone}</div>}</FormMessage>
                                 </FormItem>
@@ -226,7 +226,7 @@ export default function Create() {
                                 <FormItem>
                                     <FormLabel>{t('Landline Phone')}</FormLabel>
                                     <FormControl>
-                                        <AutosizeTextarea placeholder={t('Landline Phone')} type="text" {...field} />
+                                        <AutosizeTextarea placeholder={t('Landline Phone')}  {...field} />
                                     </FormControl>
                                     <FormMessage>{errors.landline_phone && <div>{errors.landline_phone}</div>}</FormMessage>
                                 </FormItem>
@@ -282,7 +282,7 @@ export default function Create() {
                         />
                     </div>
                 </div>
-                <div className="grid grid-cols-12 gap-4">
+                {/* <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-6">
                         <FormField
                             control={form.control}
@@ -313,7 +313,7 @@ export default function Create() {
                             )}
                         />
                     </div>
-                </div>
+                </div> */}
                 <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-6">
                         <FormField

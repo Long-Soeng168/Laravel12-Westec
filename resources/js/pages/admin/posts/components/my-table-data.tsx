@@ -88,11 +88,11 @@ const MyTableData = () => {
                                     <ArrowUpDown size={16} /> {t('Type')}
                                 </span>
                             </TableHead>
-                            <TableHead onClick={() => handleSort('total_view_counts')}>
+                            {/* <TableHead onClick={() => handleSort('total_view_counts')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Total View')}
                                 </span>
-                            </TableHead>
+                            </TableHead> */}
                             <TableHead onClick={() => handleSort('post_date')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Post Date')}
@@ -209,9 +209,9 @@ const MyTableData = () => {
                                 </TableCell>
                                 <TableCell>{item.category_code || '---'}</TableCell>
                                 <TableCell>{item.type || '---'}</TableCell>
-                                <TableCell>
+                                {/* <TableCell>
                                     {item.total_view_counts ? <span className="flex items-center gap-1">{item.total_view_counts}</span> : '---'}
-                                </TableCell>
+                                </TableCell> */}
                                 <TableCell className="whitespace-nowrap">
                                     {item.post_date
                                         ? new Date(item.post_date).toLocaleDateString('en-UK', {

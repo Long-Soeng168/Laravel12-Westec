@@ -1,4 +1,7 @@
 {
+
+    "Career Position": "Position",
+
     "File Manager": "File Manager",
     "Close": "Close",
     "Refresh": "Refresh",
@@ -194,7 +197,7 @@
     "For external content you can put link here.": "For external content you can put link here.",
     "Choose type (Link) for external content and fill Link input.": "Choose type (Link) for external content and fill Link input.",
     "Select the category where this post will show.": "Select the category where this post will show.",
-    "Lower number is priority - default = 1": "Lower number is priority (default = 1)",
+    "Lower number is priority - default = 1": "Lower number is priority",
     "Select the parent this item belongs to.": "Select the parent this item belongs to.",
     "Select the position where this item will show.": "Select the position where this item will show.",
     "Select the parent page for this page.": "Select the parent page for this page."

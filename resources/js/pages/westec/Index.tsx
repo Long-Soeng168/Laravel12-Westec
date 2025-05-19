@@ -9,43 +9,6 @@ import { FeatureSection } from './components/feature-section';
 import Headline from './components/headline';
 import MyBoosters from './components/my-boosters';
 import WestecLayout from './layout/layout';
-const images = [
-    {
-        id: '1',
-        image: '/assets/westec/images/banner1.jpeg',
-        alt: 'image 1',
-        short: 'Safety and security don’t just happen; <strong>CCTV</strong> is an investment in protection',
-        bg: '#273896',
-    },
-    {
-        id: '2',
-        image: '/assets/westec/images/banner2.jpeg',
-        alt: 'image 2',
-        short: 'Your safety starts at the door—let an <strong>Access Control System</strong> decide who comes through.',
-        bg: '#008080',
-    },
-    {
-        id: '3',
-        image: '/assets/westec/images/banner3.jpeg',
-        alt: 'image 3',
-        short: 'Peace of mind begins with protection—<strong>Intrusion Alarms</strong> ensure you sleep soundly.',
-        bg: '#36454f',
-    },
-    {
-        id: '4',
-        image: '/assets/westec/images/banner4.jpeg',
-        alt: 'image 4',
-        short: 'The sun never send a bill—<strong>Smart Solar Energy System</strong> turn its power savings.',
-        bg: '#008080',
-    },
-    {
-        id: '5',
-        image: '/assets/westec/images/banner2.jpeg',
-        alt: 'image 5',
-        short: 'A smart home isn"t just about convenice—it"s about control.Automate your world with a <strong>Smart Home Automation System</strong>.',
-        bg: '#273896',
-    },
-];
 const Index = () => {
     const {
         banners,
@@ -58,6 +21,8 @@ const Index = () => {
         news_detail,
         events_detail,
         solution_boosters,
+        contact_heading_1,
+        contact_heading_2,
     } = usePage().props;
     const { t, currentLocale } = useTranslation();
     return (
@@ -66,14 +31,14 @@ const Index = () => {
             {security_detail?.title && <FeatureSection item={security_detail} defaultDropDown={true} />}
             {smart_home_detail?.title && <FeatureSection item={smart_home_detail} defaultDropDown={false} />}
 
-            <ContactSection bg="bg-primary" title="Smarter solutions start here!
-Find out what Westec can do for you." />
+            {contact_heading_1 && (
+                <ContactSection bg="bg-primary" title={currentLocale == 'kh' ? contact_heading_1?.title_kh : contact_heading_1?.title} />
+            )}
 
             {commercial_detail?.title && <FeatureSection item={commercial_detail} defaultDropDown={false} />}
             {it_solution_detail?.title && <FeatureSection item={it_solution_detail} defaultDropDown={false} />}
 
-            <ContactSection title="Do you want a future-ready technology solutions 
-that move your business forward?" />
+            {contact_heading_2 && <ContactSection title={currentLocale == 'kh' ? contact_heading_2?.title_kh : contact_heading_2?.title} />}
 
             <MyBoosters solution_boosters={solution_boosters} />
             <div id="partners"></div>

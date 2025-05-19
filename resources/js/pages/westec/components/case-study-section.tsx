@@ -57,14 +57,13 @@ export function CaseStudySection({ item, defaultDropDown = true }: { item: any; 
                         }}
                     ></div>
                     <div className="border-t bg-white">
-                        <div className="absolute right-4 bottom-4 lg:right-8">
-                            <Button
-                                size="icon"
-                                className="flex w-full flex-nowrap justify-end rounded-none opacity-50"
+                        <div className="absolute right-4 bottom-4 lg:right-14">
+                            <button
+                                className="flex w-full flex-nowrap justify-end rounded-none"
                                 onClick={() => setSelectedData('')}
                             >
-                                <ChevronUp className="size-8 stroke-white stroke-1 lg:size-16" />
-                            </Button>
+                                <ChevronUp className="size-8 stroke-true-primary stroke-1 lg:size-20" />
+                            </button>
                         </div>
                     </div>
                 </div>

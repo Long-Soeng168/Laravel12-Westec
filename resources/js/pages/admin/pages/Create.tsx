@@ -255,7 +255,7 @@ export default function Create() {
 
                     <div className="grid grid-cols-6 gap-4 lg:grid-cols-12">
                         <div className="col-span-6 flex space-x-2">
-                            <span>
+                            {/* <span>
                                 <FormField
                                     control={form.control}
                                     name="source"
@@ -294,7 +294,7 @@ export default function Create() {
                                         </FormItem>
                                     )}
                                 />
-                            </span>
+                            </span> */}
                             <span className="flex-1">
                                 <FormField
                                     control={form.control}
@@ -305,7 +305,7 @@ export default function Create() {
                                             <FormControl>
                                                 <Input placeholder={t('Link')} type="text" {...field} />
                                             </FormControl>
-                                            <FormDescription>{t('For external content you can put link here.')}</FormDescription>
+                                            {/* <FormDescription>{t('For external content you can put link here.')}</FormDescription> */}
                                             <FormMessage>{errors.link && <div>{errors.link}</div>}</FormMessage>
                                         </FormItem>
                                     )}
@@ -336,7 +336,7 @@ export default function Create() {
                                                     {/* <SelectItem value="link">Link</SelectItem> */}
                                                 </SelectContent>
                                             </Select>
-                                            <FormDescription>{t('Choose type (Link) for external content and fill Link input.')}</FormDescription>
+                                            {/* <FormDescription>{t('Choose type (Link) for external content and fill Link input.')}</FormDescription> */}
                                             <FormMessage>{errors.type && <div>{errors.type}</div>}</FormMessage>
                                         </FormItem>
                                     )}

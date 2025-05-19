@@ -171,7 +171,7 @@ export default function Create() {
                             />
                         </div>
                     </div>
-                    <FormField
+                    {/* <FormField
                         control={form.control}
                         name="short_description"
                         render={({ field }) => (
@@ -183,8 +183,8 @@ export default function Create() {
                                 <FormMessage>{errors.short_description && <div>{errors.short_description}</div>}</FormMessage>
                             </FormItem>
                         )}
-                    />
-                    <FormField
+                    /> */}
+                    {/* <FormField
                         control={form.control}
                         name="short_description_kh"
                         render={({ field }) => (
@@ -196,10 +196,10 @@ export default function Create() {
                                 <FormMessage>{errors.short_description_kh && <div>{errors.short_description_kh}</div>}</FormMessage>
                             </FormItem>
                         )}
-                    />
+                    /> */}
                     <div className="grid grid-cols-6 gap-4 lg:grid-cols-12">
                         <div className="col-span-6 flex space-x-2">
-                            <span>
+                            {/* <span>
                                 <FormField
                                     control={form.control}
                                     name="source"
@@ -238,7 +238,7 @@ export default function Create() {
                                         </FormItem>
                                     )}
                                 />
-                            </span>
+                            </span> */}
                             <span className="flex-1">
                                 <FormField
                                     control={form.control}

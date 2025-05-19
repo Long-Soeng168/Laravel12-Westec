@@ -68,7 +68,7 @@ export default function Create() {
             short_description: editData?.short_description || '',
             short_description_kh: editData?.short_description_kh || '',
             link: editData?.link || '',
-            type: editData?.type || 'content',
+            type: editData?.type || 'link',
             source: editData?.source?.toString() || '',
             status: editData?.status || 'active',
             category_code: editData?.category_code?.toString() || '',
@@ -269,7 +269,7 @@ export default function Create() {
 
                     <div className="grid grid-cols-6 gap-4 lg:grid-cols-12">
                         <div className="col-span-6 flex space-x-2">
-                            <span>
+                            {/* <span>
                                 <FormField
                                     control={form.control}
                                     name="source"
@@ -308,7 +308,7 @@ export default function Create() {
                                         </FormItem>
                                     )}
                                 />
-                            </span>
+                            </span> */}
                             <span className="flex-1">
                                 <FormField
                                     control={form.control}
@@ -319,7 +319,7 @@ export default function Create() {
                                             <FormControl>
                                                 <Input placeholder={t('Link')} type="text" {...field} />
                                             </FormControl>
-                                            <FormDescription>{t('For external content you can put link here.')}</FormDescription>
+                                            {/* <FormDescription>{t('For external content you can put link here.')}</FormDescription> */}
                                             <FormMessage>{errors.link && <div>{errors.link}</div>}</FormMessage>
                                         </FormItem>
                                     )}
@@ -348,7 +348,7 @@ export default function Create() {
                                                     {/* <SelectItem value="link">Link</SelectItem> */}
                                                 </SelectContent>
                                             </Select>
-                                            <FormDescription>{t('Choose type (Link) for external content and fill Link input.')}</FormDescription>
+                                            {/* <FormDescription>{t('Choose type (Link) for external content and fill Link input.')}</FormDescription> */}
                                             <FormMessage>{errors.type && <div>{errors.type}</div>}</FormMessage>
                                         </FormItem>
                                     )}
@@ -525,7 +525,7 @@ export default function Create() {
                         </div>
                     )}
                     {/* Start Long Description */}
-                    <div key={editorKey} className="space-y-8">
+                    {/* <div key={editorKey} className="space-y-8">
                         <div>
                             <p className="mb-1 text-sm font-medium">{t('Long Description')}</p>
                             <MyCkeditor5 data={long_description} setData={setLong_description} />
@@ -534,7 +534,7 @@ export default function Create() {
                             <p className="mb-1 text-sm font-medium">{t('Long Description Khmer')}</p>
                             <MyCkeditor5 data={long_description_kh} setData={setLong_description_kh} />
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* End Long Description */}
                     {progress && <ProgressWithValue value={progress.percentage} position="start" />}

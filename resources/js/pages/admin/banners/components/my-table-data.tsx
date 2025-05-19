@@ -51,7 +51,7 @@ const MyTableData = () => {
                             <TableHead className="w-[50px]">{t('No')}</TableHead>
                             <TableHead className="text-left">{t('Action')}</TableHead>
                             <TableHead>{t('Image')}</TableHead>
-                            <TableHead className="text-center">Video</TableHead>
+                            {/* <TableHead className="text-center">Video</TableHead> */}
                             <TableHead className="text-center">Link</TableHead>
                             <TableHead onClick={() => handleSort('title')}>
                                 <span className="flex cursor-pointer items-center">
@@ -63,7 +63,7 @@ const MyTableData = () => {
                                     <ArrowUpDown size={16} /> {t('Title Khmer')}
                                 </span>
                             </TableHead>
-                            <TableHead onClick={() => handleSort('short_description')}>
+                            {/* <TableHead onClick={() => handleSort('short_description')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Short Description')}
                                 </span>
@@ -72,7 +72,7 @@ const MyTableData = () => {
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Short Description Khmer')}
                                 </span>
-                            </TableHead>
+                            </TableHead> */}
                             <TableHead onClick={() => handleSort('order_index')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Order Index')}
@@ -184,7 +184,7 @@ const MyTableData = () => {
                                         />
                                     )}
                                 </TableCell>
-                                <TableCell className="text-center">
+                                {/* <TableCell className="text-center">
                                     {item.video ? (
                                         <a href={`/assets/files/banners/videos/${item.video}`} target="_blank">
                                             <MyTooltipButton variant="ghost" title={item.video}>
@@ -194,7 +194,7 @@ const MyTableData = () => {
                                     ) : (
                                         '---'
                                     )}
-                                </TableCell>
+                                </TableCell> */}
                                 <TableCell className="text-center">
                                     {item.link ? (
                                         <a href={`${item.link}`} target="_blank">
@@ -218,8 +218,8 @@ const MyTableData = () => {
                                 </TableCell>
                                 <TableCell>{item.title || '---'}</TableCell>
                                 <TableCell>{item.title_kh || '---'}</TableCell>
-                                <TableCell>{item.short_description || '---'}</TableCell>
-                                <TableCell>{item.short_description_kh || '---'}</TableCell>
+                                {/* <TableCell>{item.short_description || '---'}</TableCell>
+                                <TableCell>{item.short_description_kh || '---'}</TableCell> */}
                                 <TableCell>{item.order_index || '---'}</TableCell>
                                 <TableCell>
                                     {hasPermission('banner update') ? (

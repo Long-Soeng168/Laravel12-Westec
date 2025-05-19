@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontPageController;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Career;
+use App\Models\Heading;
 use App\Models\Link;
 use App\Models\Page;
 use App\Models\PagePosition;
@@ -65,6 +66,10 @@ class WestecController extends Controller
             ->get();
 
         $banners = Banner::where('position_code', 'TOP_HOMEPAGE')->where('status', 'active')->get();
+
+        $contact_heading_1 = Heading::where('status', 'active')->where('code', 'SOLUTION-HEADING-CONTACT-1')->first();
+        $contact_heading_2 = Heading::where('status', 'active')->where('code', 'SOLUTION-HEADING-CONTACT-2')->first();
+
         return Inertia::render('westec/Index', [
             'security_detail' => $security_detail,
             'smart_home_detail' => $smart_home_detail,
@@ -76,6 +81,8 @@ class WestecController extends Controller
             'events_detail' => $events_detail,
             'banners' => $banners,
             'solution_boosters' => $solution_boosters,
+            'contact_heading_1' => $contact_heading_1,
+            'contact_heading_2' => $contact_heading_2,
         ]);
     }
 
@@ -106,6 +113,9 @@ class WestecController extends Controller
             ->where('status', 'active')
             ->orderBy('order_index')
             ->first();
+
+        $contact_heading_1 = Heading::where('status', 'active')->where('code', 'ABOUT-HEADING-CONTACT-1')->first();
+        
         // return $our_commitment_detail;
         return Inertia::render('westec/About', [
             'abouts_detail' => $abouts_detail,
@@ -113,6 +123,7 @@ class WestecController extends Controller
             'vision_detail' => $vision_detail,
             'our_commitment_detail' => $our_commitment_detail,
             'our_journey_detail' => $our_journey_detail,
+            'contact_heading_1' => $contact_heading_1,
         ]);
     }
     public function solutions()
@@ -139,6 +150,8 @@ class WestecController extends Controller
             ->first();
         $banners = Banner::where('position_code', 'TOP_HOMEPAGE')->where('status', 'active')->get();
 
+        $contact_heading_1 = Heading::where('status', 'active')->where('code', 'SOLUTION-HEADING-CONTACT-1')->first();
+        $contact_heading_2 = Heading::where('status', 'active')->where('code', 'SOLUTION-HEADING-CONTACT-2')->first();
         // return $our_commitment_detail;
         return Inertia::render('westec/Solutions', [
             'security_detail' => $security_detail,
@@ -146,6 +159,8 @@ class WestecController extends Controller
             'commercial_detail' => $commercial_detail,
             'it_solution_detail' => $it_solution_detail,
             'banners' => $banners,
+            'contact_heading_1' => $contact_heading_1,
+            'contact_heading_2' => $contact_heading_2,
         ]);
     }
     public function case_studies()
@@ -180,6 +195,10 @@ class WestecController extends Controller
             ->where('status', 'active')
             ->orderBy('order_index')
             ->first();
+
+        $contact_heading_1 = Heading::where('status', 'active')->where('code', 'CASE-STUDY-HEADING-CONTACT-1')->first();
+        $contact_heading_2 = Heading::where('status', 'active')->where('code', 'CASE-STUDY-HEADING-CONTACT-2')->first();
+
         return Inertia::render('westec/CaseStudies', [
             'banking_detail' => $banking_detail,
             'embassy_detail' => $embassy_detail,
@@ -187,6 +206,8 @@ class WestecController extends Controller
             'manufacturing_detail' => $manufacturing_detail,
             'construction_detail' => $construction_detail,
             'entertainment_detail' => $entertainment_detail,
+            'contact_heading_1' => $contact_heading_1,
+            'contact_heading_2' => $contact_heading_2,
         ]);
     }
 
@@ -196,10 +217,14 @@ class WestecController extends Controller
             $query->where('status', 'active')->orderBy('order_index');
         }])->where('status', 'active')->get();
         $careers = Career::with('position')->where('status', 'active')->get();
+
+        $contact_heading_1 = Heading::where('status', 'active')->where('code', 'CAREER-HEADING-CONTACT-1')->first();
+
         // return $team_categories;
         return Inertia::render('westec/Career', [
             'team_categories' => $team_categories,
             'careers' => $careers,
+            'contact_heading_1' => $contact_heading_1,
         ]);
     }
 
@@ -208,9 +233,15 @@ class WestecController extends Controller
         $solutions = Page::with(['images', 'children' => function ($query) {
             $query->with('children', 'images')->where('status', 'active')->orderBy('order_index');
         }])->where('code', 'SOLUTION')->where('status', 'active')->first();
+        $contact_heading_1 = Heading::where('status', 'active')->where('code', 'CONTACT-HEADING-1')->first();
+
+        $banners = Banner::where('position_code', 'CONTACT_PAGE')->where('status', 'active')->orderBy('order_index')->first();
+
         // return $solutions;
         return Inertia::render('westec/Contact', [
             'solutions' => $solutions,
+            'contact_heading_1' => $contact_heading_1,
+            'banners' => $banners,
         ]);
     }
 }

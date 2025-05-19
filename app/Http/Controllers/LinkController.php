@@ -36,7 +36,10 @@ class LinkController extends Controller implements HasMiddleware
 
         if ($search) {
             $query->where(function ($sub_query) use ($search) {
-                $sub_query->where('title', 'LIKE', "%{$search}%");
+                $sub_query->where('title', 'LIKE', "%{$search}%")
+                    ->orWhere('title_kh', 'LIKE', "%{$search}%")
+                    ->orWhere('order_index', 'LIKE', "%{$search}%")
+                    ->orWhere('type', 'LIKE', "%{$search}%");
             });
         }
         if ($status) {
@@ -82,10 +85,10 @@ class LinkController extends Controller implements HasMiddleware
         unset($validated['image']);
 
         foreach ($validated as $key => $value) {
-    if ($value === '') {
-        $validated[$key] = null;
-    }
-}
+            if ($value === '') {
+                $validated[$key] = null;
+            }
+        }
 
         if ($image_file) {
             try {
@@ -136,10 +139,10 @@ class LinkController extends Controller implements HasMiddleware
         unset($validated['image']);
 
         foreach ($validated as $key => $value) {
-    if ($value === '') {
-        $validated[$key] = null;
-    }
-}
+            if ($value === '') {
+                $validated[$key] = null;
+            }
+        }
 
         if ($image_file) {
             try {

@@ -49,6 +49,8 @@ class PageController extends Controller implements HasMiddleware
             $query->where(function ($sub_query) use ($search) {
                 return $sub_query->where('title', 'LIKE', "%{$search}%")
                     ->orWhere('title_kh', 'LIKE', "%{$search}%")
+                    ->orWhere('short_description', 'LIKE', "%{$search}%")
+                    ->orWhere('short_description_kh', 'LIKE', "%{$search}%")
                     ->orWhere('code', 'LIKE', "%{$search}%")
                     ->orWhere('position_code', 'LIKE', "%{$search}%")
                     ->orWhere('order_index', 'LIKE', "%{$search}%")
@@ -92,8 +94,8 @@ class PageController extends Controller implements HasMiddleware
             'code' => 'nullable|string|max:255|unique:pages,code',
             'title' => 'required|string|max:255',
             'title_kh' => 'nullable|string|max:255',
-            'short_description' => 'nullable|string|max:500',
-            'short_description_kh' => 'nullable|string|max:500',
+            'short_description' => 'nullable|string|max:1000',
+            'short_description_kh' => 'nullable|string|max:1000',
             'long_description' => 'nullable|string',
             'long_description_kh' => 'nullable|string',
             'link' => 'nullable|string|max:255',
@@ -184,8 +186,8 @@ class PageController extends Controller implements HasMiddleware
             'code' => 'nullable|string|max:255|unique:pages,code,' . $page->id,
             'title' => 'required|string|max:255',
             'title_kh' => 'nullable|string|max:255',
-            'short_description' => 'nullable|string|max:500',
-            'short_description_kh' => 'nullable|string|max:500',
+            'short_description' => 'nullable|string|max:1000',
+            'short_description_kh' => 'nullable|string|max:1000',
             'long_description' => 'nullable|string',
             'long_description_kh' => 'nullable|string',
             'link' => 'nullable|string|max:255',

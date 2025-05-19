@@ -30,9 +30,13 @@ export const MenuItem = ({
         transition={{ duration: 0.3 }}
         className="bg-true-primary text-sm whitespace-nowrap 2xl:text-xl 2xl:px-8 px-6 py-0.5 cursor-pointer font-proxima-nova-regular text-white hover:opacity-[0.9] dark:text-white flex gap-0.5 items-center"
       >
-        {item}  <ChevronUp className="h-4 w-4 text-white dark:text-gray-300 transition-transform duration-300 rotate-180" />
+        {item}  
+        {
+          children &&
+        <ChevronUp className="h-4 w-4 text-white dark:text-gray-300 transition-transform duration-300 rotate-180" />
+        }
       </motion.a>
-      {active !== null && (
+      {active !== null && children && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

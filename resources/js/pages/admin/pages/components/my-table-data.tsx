@@ -50,6 +50,11 @@ const MyTableData = () => {
                         <TableRow>
                             <TableHead className="w-[50px]">{t('No')}</TableHead>
                             <TableHead className="text-left">{t('Action')}</TableHead>
+                            <TableHead onClick={() => handleSort('order_index')}>
+                                <span className="flex cursor-pointer items-center">
+                                    <ArrowUpDown size={16} /> {t('Order Index')}
+                                </span>
+                            </TableHead>
                             <TableHead>{t('Image')}</TableHead>
                             <TableHead>{t('Link')}</TableHead>
                             <TableHead>{t('Code')}</TableHead>
@@ -71,11 +76,6 @@ const MyTableData = () => {
                             <TableHead onClick={() => handleSort('short_description_kh')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Short Description Khmer')}
-                                </span>
-                            </TableHead>
-                            <TableHead onClick={() => handleSort('order_index')}>
-                                <span className="flex cursor-pointer items-center">
-                                    <ArrowUpDown size={16} /> {t('Order Index')}
                                 </span>
                             </TableHead>
                             <TableHead onClick={() => handleSort('status')}>
@@ -143,6 +143,7 @@ const MyTableData = () => {
                                         )}
                                     </span>
                                 </TableCell>
+                                <TableCell>{item.order_index || '---'}</TableCell>
                                 <TableCell>
                                     {item.images[0] ? (
                                         <button
@@ -196,7 +197,6 @@ const MyTableData = () => {
                                 <TableCell>{item.title_kh || '---'}</TableCell>
                                 <TableCell>{item.short_description || '---'}</TableCell>
                                 <TableCell>{item.short_description_kh || '---'}</TableCell>
-                                <TableCell>{item.order_index || '---'}</TableCell>
                                 <TableCell>
                                     {hasPermission('page update') ? (
                                         <MyUpdateStatusButton

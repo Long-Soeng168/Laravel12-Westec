@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Career;
 use App\Models\Heading;
 use App\Models\Link;
+use App\Models\Message;
+use App\Models\MessageInquiry;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\PostDailyView;
 use App\Models\Project;
+use App\Models\Team;
 use App\Models\User;
 use DB;
 use Inertia\Inertia;
@@ -37,6 +41,10 @@ class DashboardController extends Controller
         $permission_counts = Permission::count();
         $heading_counts = Heading::count();
         $project_counts = Project::count();
+        $message_counts = Message::count();
+        $message_inquiry_counts = MessageInquiry::count();
+        $team_counts = Team::count();
+        $career_counts = Career::count();
 
         // dd($post_daily_views);
         return Inertia::render('admin/dashboard/Index', [
@@ -52,6 +60,10 @@ class DashboardController extends Controller
                 'permission_counts' => $permission_counts,
                 'heading_counts' => $heading_counts,
                 'project_counts' => $project_counts,
+                'message_counts' => $message_counts,
+                'message_inquiry_counts' => $message_inquiry_counts,
+                'team_counts' => $team_counts,
+                'career_counts' => $career_counts,
             ]
         ]);
     }

@@ -8,7 +8,7 @@ import WhyChooseUsCard from './components/why-choose-us-card';
 import WestecLayout from './layout/layout';
 
 const About = () => {
-    const { abouts_detail, why_choose_westec_detail, vision_detail, our_commitment_detail, our_journey_detail } = usePage().props;
+    const { abouts_detail, why_choose_westec_detail, vision_detail, our_commitment_detail, our_journey_detail, contact_heading_1 } = usePage().props;
     const { t, currentLocale } = useTranslation();
 
     return (
@@ -63,7 +63,9 @@ const About = () => {
                 </section>
             )}
 
-            <ContactSection bg="bg-true-primary-two" />
+            {contact_heading_1 && (
+                <ContactSection bg="bg-true-primary-two" title={currentLocale == 'kh' ? contact_heading_1?.title_kh : contact_heading_1?.title} />
+            )}
 
             {vision_detail?.title && (
                 <section id={`${vision_detail?.code}`}>

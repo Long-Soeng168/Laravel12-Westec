@@ -171,12 +171,12 @@ export function AppSidebar() {
                     icon: Layers2Icon,
                     url: '/admin/post_categories',
                 },
-                {
-                    title: t('View Counts'),
-                    permission: 'post view',
-                    icon: Tally5Icon,
-                    url: '/admin/post_view_counts',
-                },
+                // {
+                //     title: t('View Counts'),
+                //     permission: 'post view',
+                //     icon: Tally5Icon,
+                //     url: '/admin/post_view_counts',
+                // },
             ],
         },
         {

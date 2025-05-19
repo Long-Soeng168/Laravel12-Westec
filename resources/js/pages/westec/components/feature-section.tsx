@@ -49,7 +49,7 @@ export function FeatureSection({ item, defaultDropDown = true }: { item: any; de
                                     >
                                         <img
                                             src={`/assets/images/pages/${child.images[0]?.image}`}
-                                            className="w-[40px] object-contain lg:w-[50px]"
+                                            className="w-[40px] aspect-square object-contain lg:w-[50px]"
                                             alt=""
                                         />
                                         <p className="mt-2 line-clamp-3 text-center text-[10px] whitespace-normal text-white lg:text-xs 2xl:text-base">
@@ -72,10 +72,10 @@ export function FeatureSection({ item, defaultDropDown = true }: { item: any; de
                             __html: currentLocale == 'kh' ? selectedData?.long_description_kh : selectedData?.long_description,
                         }}
                     ></div>
-                    <div className="absolute right-4 lg:right-8 bottom-2">
-                        <Button size='icon' className="flex w-full flex-nowrap justify-end rounded-none opacity-50" onClick={() => setSelectedData(null)}>
-                            <ChevronUp className="size-8 lg:size-16 stroke-white stroke-1" />
-                        </Button>
+                    <div className="absolute right-4 lg:right-14 bottom-0">
+                        <button className="flex w-full flex-nowrap justify-end rounded-none" onClick={() => setSelectedData(null)}>
+                            <ChevronUp className="size-8 lg:size-20 stroke-white stroke-1" />
+                        </button>
                     </div>
                 </div>
             )}

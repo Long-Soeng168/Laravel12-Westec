@@ -20,10 +20,10 @@ const MyBoosters = ({ solution_boosters }: { solution_boosters: any[] }) => {
 
     function section(item: any, index: number) {
         return (
-            <div className={`border-l-true-primary w-full ${index > 0 && 'border-l-1'} p-2 pt-0 lg:p-8 lg:pt-0`}>
+            <div className={`border-l-true-primary w-full ${index > 0 && 'md:border-l-1 lg:px-8'} px-2 pt-0  lg:pt-0`}>
                 <div className="flex flex-col gap-6">
                     {/* Section Header */}
-                    <div>
+                    <div className={`${index > 0 && 'mt-10 md:mt-0'}`}>
                         <h2 className="font-proxima-nova-regular bg-primary mb-6 inline px-4 py-2 text-center text-lg text-white 2xl:text-xl">
                             {currentLocale == 'kh' ? item.title_kh : item.title}
                         </h2>
@@ -31,11 +31,11 @@ const MyBoosters = ({ solution_boosters }: { solution_boosters: any[] }) => {
                     {item?.children?.length > 0 &&
                         item?.children?.map((child, index) => (
                             <div className="flex items-center gap-6">
-                                <div className="aspect-square w-44 2xl:w-52">
+                                <div className="aspect-square w-18 object-contain 2xl:w-28 shrink-0">
                                     <img
                                         src={`/assets/images/pages/thumb/${child?.images[0]?.image}`}
-                                        className="h-full w-full object-contain"
-                                        alt="Site Evaluation"
+                                        className="w-full h-full aspect-square object-contain"
+                                        alt=""
                                     />
                                 </div>
                                 <div className="text-start">

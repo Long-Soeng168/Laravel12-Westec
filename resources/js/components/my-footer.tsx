@@ -6,7 +6,7 @@ const MyFooter = () => {
     const { application_info, pages_menus, links_follow_us, links_chat_with_us } = usePage().props;
     return (
         <>
-            <footer className="font-proxima-nova-regular mt-20 py-10 text-black">
+            <footer className="font-proxima-nova-regular mt-10 py-10 text-black">
                 <div className="mx-auto grid max-w-[2000px] grid-cols-1 gap-8 px-4 lg:grid-cols-4 lg:px-16">
                     {/* Contact Section */}
                     <div className="grid w-full grid-cols-1">
@@ -20,7 +20,8 @@ const MyFooter = () => {
 
                             <div className="mt-8">
                                 <div className="flex">
-                                    <p className="w-28 lg:w-32">{t('Mobile Phone')}</p>:<p className="ml-2">{application_info?.phone}</p>
+                                    <p className="w-28 lg:w-32">{t('Mobile Phone')}</p>:
+                                    <p className="ml-2 whitespace-pre-line">{application_info?.phone}</p>
                                 </div>
                                 <div className="flex">
                                     <p className="w-28 lg:w-32">{t('Landline Phone')}</p>:
@@ -52,7 +53,7 @@ const MyFooter = () => {
                                     <ul className="mt-6 list-disc space-y-1 pl-3 2xl:text-xl">
                                         {pages_menus?.abouts?.children?.length > 0 &&
                                             pages_menus?.abouts?.children?.map((child) => (
-                                                <li className="cursor-pointer hover:underline">
+                                                <li className="cursor-pointer text-base hover:underline">
                                                     <Link href={`/about#${child?.code}`}>
                                                         {' '}
                                                         {currentLocale == 'kh' ? child?.title_kh : child?.title}
@@ -72,7 +73,7 @@ const MyFooter = () => {
                                     <ul className="mt-6 list-disc space-y-1 pl-3 2xl:text-xl">
                                         {pages_menus?.solutions?.children?.length > 0 &&
                                             pages_menus?.solutions?.children?.map((child) => (
-                                                <li className="cursor-pointer hover:underline">
+                                                <li className="cursor-pointer text-base hover:underline">
                                                     <Link href={`/solutions#${child?.code}`}>
                                                         {' '}
                                                         {currentLocale == 'kh' ? child?.title_kh : child?.title}
@@ -92,7 +93,7 @@ const MyFooter = () => {
                                     <ul className="mt-6 list-disc space-y-1 pl-3 2xl:text-xl">
                                         {pages_menus?.case_studies?.children?.length > 0 &&
                                             pages_menus?.case_studies?.children?.map((child) => (
-                                                <li className="cursor-pointer hover:underline">
+                                                <li className="cursor-pointer text-base hover:underline">
                                                     <Link href={`/case_studies#${child?.code}`}>
                                                         {' '}
                                                         {currentLocale == 'kh' ? child?.title_kh : child?.title}

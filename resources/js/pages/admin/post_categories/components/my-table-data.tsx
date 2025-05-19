@@ -52,8 +52,8 @@ const MyTableData = () => {
                         <TableRow>
                             <TableHead className="w-[50px]">{t('No')}</TableHead>
                             <TableHead className="text-left">{t('Action')}</TableHead>
-                            <TableHead>{t('Image')}</TableHead>
-                            <TableHead>{t('Banner')}</TableHead>
+                            {/* <TableHead>{t('Image')}</TableHead>
+                            <TableHead>{t('Banner')}</TableHead> */}
                             <TableHead onClick={() => handleSort('code')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Code')}
@@ -69,7 +69,7 @@ const MyTableData = () => {
                                     <ArrowUpDown size={16} /> {t('Name Khmer')}
                                 </span>
                             </TableHead>
-                            <TableHead onClick={() => handleSort('short_description')}>
+                            {/* <TableHead onClick={() => handleSort('short_description')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Short Description')}
                                 </span>
@@ -78,12 +78,12 @@ const MyTableData = () => {
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Short Description Khmer')}
                                 </span>
-                            </TableHead>
-                            <TableHead onClick={() => handleSort('parent_code')}>
+                            </TableHead> */}
+                            {/* <TableHead onClick={() => handleSort('parent_code')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Parent')}
                                 </span>
-                            </TableHead>
+                            </TableHead> */}
                             <TableHead onClick={() => handleSort('order_index')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Order Index')}
@@ -130,7 +130,7 @@ const MyTableData = () => {
                                         {hasPermission('post update') && <EditButton item={item} />}
                                     </span>
                                 </TableCell>
-                                <TableCell>
+                                {/* <TableCell>
                                     {item.image ? (
                                         <button
                                             onClick={() => {
@@ -184,13 +184,13 @@ const MyTableData = () => {
                                             className="size-10 object-contain"
                                         />
                                     )}
-                                </TableCell>
+                                </TableCell> */}
                                 <TableCell>{item.code || '---'}</TableCell>
                                 <TableCell>{item.name || '---'}</TableCell>
                                 <TableCell>{item.name_kh || '---'}</TableCell>
-                                <TableCell>{item.short_description || '---'}</TableCell>
-                                <TableCell>{item.short_description_kh || '---'}</TableCell>
-                                <TableCell>{item.parent_code || '---'}</TableCell>
+                                {/* <TableCell>{item.short_description || '---'}</TableCell>
+                                <TableCell>{item.short_description_kh || '---'}</TableCell> */}
+                                {/* <TableCell>{item.parent_code || '---'}</TableCell> */}
                                 <TableCell>{item.order_index || '---'}</TableCell>
                                 {/* <TableCell>{item.order_index || '---'}</TableCell> */}
                                 <TableCell>

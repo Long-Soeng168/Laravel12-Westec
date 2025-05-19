@@ -9,55 +9,17 @@ import { ContactSection } from './components/contact-section';
 import Headline from './components/headline';
 import WestecLayout from './layout/layout';
 
-const solutionsData = [
-    {
-        category: 'SECURITY & SAFETY SOLUTIONS',
-        items: ['CCTV', 'Access Control System', 'Time Attendance System', 'Fire Alarm', 'Intrusion Alarms'],
-    },
-    {
-        category: 'SMART HOME & OFFICE SOLUTIONS',
-        items: ['Smart Solar Energy Systems', 'Smart Home Automation System'],
-    },
-    {
-        category: 'COMMERIAL & RESIDENTIAL EQUIPMENT IT SOLUTIONS',
-        items: [
-            'Commercial / Home Cinema',
-            'Conferencing System',
-            'Audio System',
-            'LED Displays',
-            'PA System',
-            'Information Display System (IDS)',
-            'POS & Kiosks',
-            'Vending Machines',
-        ],
-    },
-    {
-        category: 'Support System',
-        items: [
-            'School Application & Management System (SAMS)',
-            'Pickup & Drop-off Logistics Platform',
-            'Stock Inventory & Helpdesk Software',
-            'Server Installation',
-            'Support & Maintenance ICT',
-            'Internet Support',
-            'Website Design',
-            'Networking Installation',
-            'Networking Monitoring',
-        ],
-    },
-];
-
 const Contact = () => {
-    const { solutions, application_info } = usePage().props;
+    const { solutions, application_info, contact_heading_1, banners } = usePage().props;
     const { t, currentLocale } = useTranslation();
 
     return (
         <WestecLayout>
             <section>
-                <img src="/assets/westec/images/contact-1.png" alt="" />
+                <img src={`/assets/images/banners/${banners?.image}`} alt="" />
             </section>
             <section id="Project-Inquiry">
-                <Headline title="Project Inquiry?" />
+                <Headline title={t("Project Inquiry?")} />
                 <div className="bg-primary px-4 py-4 text-white lg:px-16">
                     <div className="grid grid-cols-1 gap-4 gap-x-8 md:grid-cols-3">
                         <div className="w-full max-w-full">
@@ -157,12 +119,9 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-            <ContactSection
-                title="Partner with Westec – your trusted system integrator –
-to streamline solutions and power up your business potential."
-                bg="bg-true-primary-four"
-                showButton={false}
-            />
+            {contact_heading_1 && (
+                <ContactSection showButton={false} bg="bg-true-primary-four" title={currentLocale == 'kh' ? contact_heading_1?.title_kh : contact_heading_1?.title} />
+            )}
             <section id="Get-Support">
                 <h1 className="my-6 inline-block border-[#273892] px-4 text-2xl font-semibold text-[#273892] lg:px-16">{t('Get Support?')}</h1>
                 <div className="bg-primary px-4 py-4 text-white lg:px-16">
@@ -210,7 +169,7 @@ to streamline solutions and power up your business potential."
                                 <Input
                                     id="subject"
                                     type="subject"
-                                    placeholder="Subject"
+                                    placeholder={t("Subject")}
                                     className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
                                 />
                             </div>
@@ -221,7 +180,7 @@ to streamline solutions and power up your business potential."
                                 <Textarea
                                     id="Your inquiry"
                                     placeholder={t('Your inquiry')}
-                                    className="min-h-[115px] w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:text-xl"
+                                    className="min-h-[112px] w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:text-xl"
                                 />
                             </div>
                         </div>

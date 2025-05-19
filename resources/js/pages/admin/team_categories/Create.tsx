@@ -1,15 +1,13 @@
 import MyDialogCancelButton from '@/components/my-dialog-cancel-button';
-import { AutosizeTextarea } from '@/components/ui/autosize-textarea';
 import { Button } from '@/components/ui/button';
-import { FileInput, FileUploader, FileUploaderContent, FileUploaderItem } from '@/components/ui/file-upload';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { ProgressWithValue } from '@/components/ui/progress-with-value';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import useTranslation from '@/hooks/use-translation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm as inertiaUseForm } from '@inertiajs/react';
-import { CloudUpload, Loader, Paperclip } from 'lucide-react';
+import { Loader } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -206,7 +204,7 @@ export default function Create({
                         />
                     </div>
                 </div>
-                <div className="grid grid-cols-12 gap-4">
+                {/* <div className="grid grid-cols-12 gap-4">
                     <div className="col-span-6">
                         <FormField
                             control={form.control}
@@ -223,8 +221,8 @@ export default function Create({
                             )}
                         />
                     </div>
-                </div>
-
+                </div> */}
+                {/* 
                 <FormField
                     control={form.control}
                     name="short_description"
@@ -251,9 +249,9 @@ export default function Create({
                             <FormMessage>{errors.short_description_kh && <div>{errors.short_description_kh}</div>}</FormMessage>
                         </FormItem>
                     )}
-                />
+                /> */}
 
-                <FormField
+                {/* <FormField
                     control={form.control}
                     name="image"
                     render={({ field }) => (
@@ -308,9 +306,9 @@ export default function Create({
                             )}
                         </FormItem>
                     )}
-                />
+                /> */}
 
-                <FormField
+                {/* <FormField
                     control={form.control}
                     name="banner"
                     render={({ field }) => (
@@ -365,7 +363,7 @@ export default function Create({
                             )}
                         </FormItem>
                     )}
-                />
+                /> */}
                 {progress && <ProgressWithValue value={progress.percentage} position="start" />}
                 {setIsOpen && <MyDialogCancelButton onClick={() => setIsOpen(false)} />}
 

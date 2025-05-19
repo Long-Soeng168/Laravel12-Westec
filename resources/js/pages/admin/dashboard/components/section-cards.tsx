@@ -1,7 +1,21 @@
 import usePermission from '@/hooks/use-permission';
 import useTranslation from '@/hooks/use-translation';
 import { Link, usePage } from '@inertiajs/react';
-import { AppWindowIcon, FilePenLineIcon, GalleryThumbnailsIcon, Heading1Icon, LinkIcon, ProjectorIcon, ShieldCheckIcon, UsersIcon, Waypoints } from 'lucide-react';
+import {
+    AppWindowIcon,
+    BriefcaseBusinessIcon,
+    FilePenLineIcon,
+    GalleryThumbnailsIcon,
+    Heading1Icon,
+    LinkIcon,
+    MailsIcon,
+    MessageCircleQuestionIcon,
+    ProjectorIcon,
+    ShieldCheckIcon,
+    SquareUserIcon,
+    UsersIcon,
+    Waypoints,
+} from 'lucide-react';
 
 const SectionCards = () => {
     const hasPermission = usePermission();
@@ -72,25 +86,55 @@ const SectionCards = () => {
             link: '/admin/permissions',
             permission: 'permission view',
         },
+        {
+            icon: MailsIcon,
+            title: t('Messages'),
+            total_records: `${featureDatas?.message_counts}`,
+            link: '/admin/messages',
+            permission: 'message view',
+        },
+        {
+            icon: MessageCircleQuestionIcon,
+            title: t('Message Inquiries'),
+            total_records: `${featureDatas?.message_inquiry_counts}`,
+            link: '/admin/message_inquiries',
+            permission: 'message view',
+        },
+        {
+            icon: SquareUserIcon,
+            title: t('Teams'),
+            total_records: `${featureDatas?.team_counts}`,
+            link: '/admin/teams',
+            permission: 'team view',
+        },
+        {
+            icon: BriefcaseBusinessIcon,
+            title: t('Careers'),
+            total_records: `${featureDatas?.career_counts}`,
+            link: '/admin/careers',
+            permission: 'team view',
+        },
     ];
 
     return (
         <div>
-            <div className="mx-auto grid max-w-full gap-6 px-6 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mx-auto grid max-w-full gap-6 px-4 sm:grid-cols-2 xl:grid-cols-4">
                 {features.map((feature) =>
                     hasPermission(feature.permission) ? (
                         <Link
                             prefetch
                             href={feature.link}
                             key={feature.title + feature.link}
-                            className="flex flex-row items-center justify-between rounded-xl border border-primary/20 px-5 py-6 transition-all duration-300 hover:-translate-1.5 hover:rounded hover:shadow-[5px_5px_rgba(104,_96,_255,_0.4),_10px_10px_rgba(104,_96,_255,_0.3),_15px_15px_rgba(104,_96,_255,_0.2),_20px_20px_rgba(104,_96,_255,_0.1),_25px_25px_rgba(104,_96,_255,_0.05)]"
+                            className="border-primary/20 flex flex-row items-center justify-between gap-2 rounded-xl border px-5 py-6 transition-all duration-300 hover:-translate-1.5 hover:rounded hover:shadow-[5px_5px_rgba(104,_96,_255,_0.4),_10px_10px_rgba(104,_96,_255,_0.3),_15px_15px_rgba(104,_96,_255,_0.2),_20px_20px_rgba(104,_96,_255,_0.1),_25px_25px_rgba(104,_96,_255,_0.05)]"
                         >
                             <div className="bg-primary/10 flex aspect-square h-16 items-center justify-center rounded-full">
                                 <feature.icon className="stroke-primary aspect-square size-7 object-contain" />
                             </div>
                             <div className="flex flex-col items-end">
-                                <span className={`text-lg ${currentLocale == 'kh' ? 'font-koulen-regular' : 'font-bold'}`}>{feature.title}</span>
-                                <p className="text-foreground/80 mt-1 text-[15px]">
+                                <span className={`text-end text-base ${currentLocale == 'kh' ? 'font-koulen-regular' : 'font-bold'}`}>
+                                    {feature.title}
+                                </span>
+                                <p className="text-foreground/80 mt-1 text-end text-sm">
                                     <strong>{feature.total_records}</strong> {feature.title}
                                 </p>
                                 {feature.sub_total_records && <p className="text-foreground/80 mt-1 text-[15px]">{feature.sub_total_records}</p>}
