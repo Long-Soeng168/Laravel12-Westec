@@ -78,7 +78,7 @@ class LinkController extends Controller implements HasMiddleware
             'type' => 'nullable|string|max:255',
             'order_index' => 'nullable|numeric',
             'status' => 'nullable|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         $image_file = $request->file('image');
@@ -132,7 +132,7 @@ class LinkController extends Controller implements HasMiddleware
             'order_index' => 'nullable|numeric',
             'type' => 'nullable|string|max:255',
             'status' => 'nullable|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         $image_file = $request->file('image');
