@@ -133,7 +133,7 @@ export const InfiniteMovingCards = ({
                 )}
             >
                 {items.map((item, idx) => (
-                    <li className="h-[100px] object-contain 2xl:h-[120px]">
+                    <li className="h-[70px] object-contain 2xl:h-[90px]">
                         <Link href={item.link || '#'}>
                             <img src={`/assets/images/links/${item.image}`} className="h-full w-full object-contain" />
                         </Link>

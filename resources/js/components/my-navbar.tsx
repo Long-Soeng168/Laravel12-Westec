@@ -2,9 +2,8 @@ import useTranslation from '@/hooks/use-translation';
 import { cn } from '@/lib/utils';
 import { MyLanguageSelector } from '@/pages/westec/components/my-select-language';
 import { Link, usePage } from '@inertiajs/react';
-import { AlignLeftIcon } from 'lucide-react';
 import { useState } from 'react';
-import { Button } from './ui/button';
+import { MyNavbarMobile } from './my-navbar-mobile';
 import { HoveredLink, Menu, MenuItem } from './ui/navbar-menu';
 
 export function MyNavbar({ className }: { className?: string }) {
@@ -20,9 +19,7 @@ export function MyNavbar({ className }: { className?: string }) {
                     <a href="/" className="w-50">
                         <img src="/assets/westec/images/logo.png" />
                     </a>
-                    <Button size="icon" variant="outline" className="xl:hidden">
-                        <AlignLeftIcon className="stroke-primary stroke-3" />
-                    </Button>
+                    <MyNavbarMobile />
                     <div className="hidden xl:block">
                         <Menu setActive={setActive}>
                             {pages_menus?.abouts && (
@@ -85,7 +82,7 @@ export function MyNavbar({ className }: { className?: string }) {
                             )}
 
                             <Link prefetch href={`/#partners`}>
-                                <MenuItem setActive={setActive} active={active} item={t("Partners")}>
+                                <MenuItem setActive={setActive} active={active} item={t('Partners')}>
                                     {/* <div className="flex flex-col space-y-4 text-sm">
                                         <HoveredLink href="/#partners">Our Partners</HoveredLink>
                                     </div> */}
@@ -93,7 +90,7 @@ export function MyNavbar({ className }: { className?: string }) {
                             </Link>
 
                             <Link prefetch href={`/career`}>
-                                <MenuItem setActive={setActive} active={active} item={t("Career")}>
+                                <MenuItem setActive={setActive} active={active} item={t('Career')}>
                                     <div className="flex flex-col space-y-4 text-sm">
                                         <HoveredLink href="/career">{t('Employee Highlights')}</HoveredLink>
                                         <HoveredLink href="/career">{t('Career')}</HoveredLink>
@@ -102,7 +99,7 @@ export function MyNavbar({ className }: { className?: string }) {
                             </Link>
 
                             <Link prefetch href={`/#newsId`}>
-                                <MenuItem setActive={setActive} active={active} item={t("News")}>
+                                <MenuItem setActive={setActive} active={active} item={t('News')}>
                                     <div className="flex flex-col space-y-4 text-sm">
                                         <HoveredLink href="/#newsId">{t('News & Updates')}</HoveredLink>
                                         <HoveredLink href="/#eventsId">{t('Events & Promotions')}</HoveredLink>
@@ -111,7 +108,7 @@ export function MyNavbar({ className }: { className?: string }) {
                             </Link>
 
                             <Link prefetch href={`/contact`}>
-                                <MenuItem setActive={setActive} active={active} item={t("Contact Us")}>
+                                <MenuItem setActive={setActive} active={active} item={t('Contact Us')}>
                                     <div className="flex flex-col space-y-4 text-sm">
                                         <HoveredLink href="/contact#Project-Inquiry">{t('Project Inquiry?')}</HoveredLink>
                                         <HoveredLink href="/contact#Get-Support">{t('Get Support?')}</HoveredLink>
