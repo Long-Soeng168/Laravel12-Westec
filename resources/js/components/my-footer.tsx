@@ -10,7 +10,7 @@ const MyFooter = () => {
                 <div className="mx-auto grid max-w-[2000px] grid-cols-1 gap-10 px-4 lg:grid-cols-6 lg:px-16">
                     {/* Contact Section */}
                     <div className="col-span-2 grid w-full grid-cols-1">
-                        <img src={`/assets/images/application_info/${application_info.image}`} alt="" className="mb-10 w-48" />
+                        <img src={`/assets/images/application_info/${application_info.image}`} alt="" className="mb-8 w-48" />
                         <div className="font-proxima-thin text-black space-y-8 text-lg leading-7 font-thin 2xl:space-y-10 2xl:text-2xl">
                             <p
                                 className="whitespace-pre-line"
@@ -114,7 +114,7 @@ const MyFooter = () => {
                         </div>
 
                         {/* Social & Chat Sections */}
-                        <div className="mt-10 grid grid-cols-2 gap-6 text-sm text-gray-500 xl:grid-cols-3">
+                        <div className="mt-16 grid grid-cols-2 gap-6 text-sm text-gray-500 xl:grid-cols-3">
                             {/* Follow Us */}
                             <div className="w-full sm:flex-1">
                                 <h3 className="bg-true-primary inline-block px-6 py-1 font-proxima-nova-regular text-base text-white 2xl:text-2xl">{t('Follow Us!')}</h3>
