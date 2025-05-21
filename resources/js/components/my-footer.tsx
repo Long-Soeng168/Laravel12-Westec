@@ -6,12 +6,12 @@ const MyFooter = () => {
     const { application_info, pages_menus, links_follow_us, links_chat_with_us } = usePage().props;
     return (
         <>
-            <footer className="font-proxima-nova-regular mt-10 py-20 text-black">
+            <footer className="font-proxima-nova-regular mt-10 pb-20 text-black">
                 <div className="mx-auto grid max-w-[2000px] grid-cols-1 gap-10 px-4 lg:grid-cols-6 lg:px-16">
                     {/* Contact Section */}
                     <div className="col-span-2 grid w-full grid-cols-1">
                         <img src={`/assets/images/application_info/${application_info.image}`} alt="" className="mb-8 w-48" />
-                        <div className="font-proxima-thin text-black space-y-8 text-lg leading-7 font-thin 2xl:space-y-10 2xl:text-2xl">
+                        <div className="font-proxima-thin space-y-8 text-base leading-7 font-thin text-black 2xl:space-y-10 2xl:text-xl">
                             <p
                                 className="whitespace-pre-line"
                                 dangerouslySetInnerHTML={{
@@ -49,19 +49,19 @@ const MyFooter = () => {
 
                     {/* Footer Links Section */}
                     <div className="w-full md:col-span-4">
-                        <div className="text-black font-proxima-thin grid grid-cols-2 gap-6 xl:grid-cols-3">
+                        <div className="font-proxima-thin grid grid-cols-2 gap-6 text-black xl:grid-cols-3">
                             {/* About Us */}
                             {pages_menus?.abouts && (
                                 <div className="flex-1">
-                                    <h3 className="bg-true-primary inline-block w-full font-proxima-nova-regular px-6 py-1 text-center text-base text-white 2xl:text-2xl">
+                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-xl">
                                         <Link href={`/about`} prefetch>
                                             {currentLocale == 'kh' ? pages_menus?.abouts?.title_kh : pages_menus?.abouts?.title}
                                         </Link>
                                     </h3>
-                                    <ul className="mt-6 list-disc marker:text-gray-400 space-y-1 pl-3 2xl:text-xl">
+                                    <ul className="mt-6 list-disc space-y-1 pl-3 marker:text-gray-400 2xl:text-xl">
                                         {pages_menus?.abouts?.children?.length > 0 &&
                                             pages_menus?.abouts?.children?.map((child) => (
-                                                <li className="cursor-pointer text-base hover:underline 2xl:text-xl">
+                                                <li className="cursor-pointer text-base hover:underline 2xl:text-lg">
                                                     <Link href={`/about#${child?.code}`}>
                                                         {' '}
                                                         {currentLocale == 'kh' ? child?.title_kh : child?.title}
@@ -73,15 +73,15 @@ const MyFooter = () => {
                             )}
                             {pages_menus?.solutions && (
                                 <div className="flex-1">
-                                    <h3 className="bg-true-primary inline-block w-full font-proxima-nova-regular px-6 py-1 text-center text-base text-white 2xl:text-2xl">
+                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-xl">
                                         <Link href={`/solutions`} prefetch>
                                             {currentLocale == 'kh' ? pages_menus?.solutions?.title_kh : pages_menus?.solutions?.title}
                                         </Link>
                                     </h3>
-                                    <ul className="mt-6 list-disc marker:text-gray-400 space-y-1 pl-3 2xl:text-xl">
+                                    <ul className="mt-6 list-disc space-y-1 pl-3 marker:text-gray-400 2xl:text-xl">
                                         {pages_menus?.solutions?.children?.length > 0 &&
                                             pages_menus?.solutions?.children?.map((child) => (
-                                                <li className="cursor-pointer text-base hover:underline 2xl:text-xl">
+                                                <li className="cursor-pointer text-base hover:underline 2xl:text-lg">
                                                     <Link href={`/solutions#${child?.code}`}>
                                                         {' '}
                                                         {currentLocale == 'kh' ? child?.title_kh : child?.title}
@@ -93,15 +93,15 @@ const MyFooter = () => {
                             )}
                             {pages_menus?.case_studies && (
                                 <div className="flex-1">
-                                    <h3 className="bg-true-primary inline-block w-full font-proxima-nova-regular px-6 py-1 text-center text-base text-white 2xl:text-2xl">
+                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-xl">
                                         <Link href={`/case_studies`} prefetch>
                                             {currentLocale == 'kh' ? pages_menus?.case_studies?.title_kh : pages_menus?.case_studies?.title}
                                         </Link>
                                     </h3>
-                                    <ul className="mt-6 list-disc marker:text-gray-400 space-y-1 pl-3 2xl:text-xl">
+                                    <ul className="mt-6 list-disc space-y-1 pl-3 marker:text-gray-400 2xl:text-xl">
                                         {pages_menus?.case_studies?.children?.length > 0 &&
                                             pages_menus?.case_studies?.children?.map((child) => (
-                                                <li className="cursor-pointer text-base hover:underline 2xl:text-xl">
+                                                <li className="cursor-pointer text-base hover:underline 2xl:text-lg">
                                                     <Link href={`/case_studies#${child?.code}`}>
                                                         {' '}
                                                         {currentLocale == 'kh' ? child?.title_kh : child?.title}
@@ -117,7 +117,9 @@ const MyFooter = () => {
                         <div className="mt-16 grid grid-cols-2 gap-6 text-sm text-gray-500 xl:grid-cols-3">
                             {/* Follow Us */}
                             <div className="w-full sm:flex-1">
-                                <h3 className="bg-true-primary inline-block px-6 py-1 font-proxima-nova-regular text-base text-white 2xl:text-2xl">{t('Follow Us!')}</h3>
+                                <h3 className="bg-true-primary font-proxima-nova-regular inline-block px-6 py-1 text-base text-white 2xl:text-xl">
+                                    {t('Follow Us!')}
+                                </h3>
                                 <div className="mt-6 flex gap-2">
                                     {links_follow_us?.map((item, index) => (
                                         <a key={item.id} href={item?.link}>
@@ -130,10 +132,12 @@ const MyFooter = () => {
                                     ))}
                                 </div>
                             </div>
-
+                            <div></div>
                             {/* Chat With Us */}
                             <div className="flex-1">
-                                <h3 className="bg-true-primary inline-block px-6 py-1 font-proxima-nova-regular text-base text-white 2xl:text-2xl">{t('Chat With Us!')}</h3>
+                                <h3 className="bg-true-primary font-proxima-nova-regular inline-block px-6 py-1 text-base text-white 2xl:text-xl">
+                                    {t('Chat With Us!')}
+                                </h3>
                                 <div className="mt-6 flex gap-2">
                                     {links_chat_with_us?.map((item, index) => (
                                         <a key={item.id} href={item?.link}>

@@ -26,7 +26,7 @@ export function CaseStudySection({ item, defaultDropDown = true }: { item: any; 
                             {currentLocale == 'kh' ? item?.title_kh : item?.title}
                         </h1> */}
                         <p
-                            className="font-proxima-nova-regular prose prose-p:m-0 prose-h2:m-0 prose-strong:text-white prose-h2:text-white text-base text-white capitalize md:max-w-[60%] lg:text-xl 2xl:text-3xl"
+                            className="font-proxima-nova-regular prose prose-p:m-0 prose-h2:m-0 prose-strong:text-white prose-h2:text-white text-base text-white capitalize md:max-w-[60%] lg:text-xl 2xl:text-2xl"
                             dangerouslySetInnerHTML={{
                                 __html: currentLocale == 'kh' ? item?.short_description_kh : item?.short_description,
                             }}
@@ -37,11 +37,11 @@ export function CaseStudySection({ item, defaultDropDown = true }: { item: any; 
                     <div ref={bannerRef} className="h-[90px]"></div>
                     <div className="flex w-full flex-nowrap justify-center gap-2.5 px-4 py-2.5 lg:justify-end lg:px-16">
                         {selectedData != '' ? (
-                            <Button className="h-7 rounded-none 2xl:h-10 2xl:text-2xl" onClick={() => handleSelect('')}>
+                            <Button className="h-7 rounded-none 2xl:h-10 2xl:text-xl" onClick={() => handleSelect('')}>
                                 {t('Show Less')} <ChevronUp />
                             </Button>
                         ) : (
-                            <Button className="h-7 rounded-none 2xl:h-10 2xl:text-2xl" onClick={() => handleSelect(item)}>
+                            <Button className="h-7 rounded-none 2xl:h-10 2xl:text-xl" onClick={() => handleSelect(item)}>
                                 {t('Read More')} <ChevronDown />
                             </Button>
                         )}

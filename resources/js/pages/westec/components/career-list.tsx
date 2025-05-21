@@ -22,13 +22,13 @@ const CareerList = ({ careers }: { careers: any[] }) => {
                     <img className="aspect-[1/1] w-full object-cover" src={`/assets/images/careers/${item.image}`} alt="Sunset in the mountains" />
                 </a>
 
-                <div className="p-4">
+                <div className="p-4 flex flex-col justify-between h-full">
                     <div className="mb-8">
-                        <a href="#" className="mb-2 inline-block text-lg font-bold text-white transition duration-500 ease-in-out 2xl:text-2xl">
+                        <a href="#" className="mb-2 inline-block text-lg font-bold text-white transition duration-500 ease-in-out 2xl:text-xl">
                             {currentLocale == 'kh' ? item?.name_kh : item?.name}
                         </a>
                         <p
-                            className="text-sm text-gray-300 2xl:text-xl"
+                            className="text-sm text-gray-300 2xl:text-lg"
                             dangerouslySetInnerHTML={{
                                 __html: currentLocale == 'kh' ? item?.short_description_kh : item?.short_description,
                             }}
@@ -37,7 +37,7 @@ const CareerList = ({ careers }: { careers: any[] }) => {
                     <div>
                         <Dialog>
                             <DialogTrigger>
-                                <span className="font-proxima-nova-regular bg-true-primary px-4 py-1 text-xs text-white capitalize transition duration-200 hover:underline 2xl:text-2xl">
+                                <span className="font-proxima-nova-regular bg-true-primary px-4 py-1 text-xs text-white capitalize transition duration-200 hover:underline 2xl:text-xl">
                                     {t('More Details')}
                                 </span>
                             </DialogTrigger>

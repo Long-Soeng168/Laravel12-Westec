@@ -21,14 +21,14 @@ const EventList = ({ items }: { items: any }) => {
                     <div className="mb-8">
                         <a
                             href={item.link || '#'}
-                            className="mb-2 inline-block text-lg font-bold text-white transition duration-500 ease-in-out 2xl:text-2xl"
+                            className="mb-2 inline-block text-lg font-bold text-white transition duration-500 ease-in-out 2xl:text-xl"
                         >
                             {currentLocale == 'kh' ? item.title_kh : item.title}
                         </a>
-                        <p className="text-sm whitespace-pre-line text-gray-300 2xl:text-xl">
+                        <p className="text-sm whitespace-pre-line text-gray-300 2xl:text-lg">
                             {currentLocale == 'kh' ? item.short_description_kh : item.short_description}
-                        </p>
-                        <p className="text-sm whitespace-pre-line text-gray-300 2xl:text-xl">
+                        </p> 
+                        <p className="text-sm whitespace-pre-line text-gray-300 2xl:text-lg">
                             {item.post_date &&
                                 new Date(item.post_date).toLocaleDateString('en-UK', {
                                     year: 'numeric',
@@ -40,7 +40,7 @@ const EventList = ({ items }: { items: any }) => {
                     <div>
                         <a
                             href={item.link || '#'}
-                            className="font-proxima-nova-regular bg-true-primary px-4 py-1 text-base text-white capitalize transition duration-200 hover:underline 2xl:text-2xl"
+                            className="font-proxima-nova-regular bg-true-primary px-4 py-1 text-base text-white capitalize transition duration-200 hover:underline 2xl:text-xl"
                         >
                             {t('Read More')}
                         </a>

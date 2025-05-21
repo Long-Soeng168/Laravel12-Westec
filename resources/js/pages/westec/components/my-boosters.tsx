@@ -31,7 +31,7 @@ const MyBoosters = ({ solution_boosters }: { solution_boosters: any[] }) => {
                     {item?.children?.length > 0 &&
                         item?.children?.map((child, index) => (
                             <div className="flex items-center gap-6">
-                                <div className="aspect-square w-18 shrink-0 object-contain 2xl:w-28">
+                                <div className="aspect-square w-18 shrink-0 object-contain 2xl:w-20">
                                     <img
                                         src={`/assets/images/pages/thumb/${child?.images[0]?.image}`}
                                         className="aspect-square h-full w-full object-contain"

@@ -57,7 +57,7 @@ const Index = () => {
                 </div>
             </div>
 
-            <div className="mb-16" id="clients">
+            <div className="mb-40" id="clients">
                 <Headline title={t('Our Clientele')} />
                 <MyPartner items={clients_detail} />
             </div>
