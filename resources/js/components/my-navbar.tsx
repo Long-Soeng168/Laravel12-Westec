@@ -15,7 +15,7 @@ export function MyNavbar({ className }: { className?: string }) {
     return (
         <>
             <div className={cn('mx-auto max-w-[2000px]', className)}>
-                <div className="bg-background flex h-full items-center justify-between border-b px-4 py-4 lg:px-16 lg:py-8">
+                <div className="bg-white flex h-full items-center justify-between border-b px-4 py-4 lg:px-16 lg:py-8">
                     <a href="/" className="w-50">
                         <img src="/assets/westec/images/logo.png" />
                     </a>

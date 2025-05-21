@@ -20,7 +20,7 @@ export function FeatureSection({ item, defaultDropDown = true }: { item: any; de
     return (
         <>
             <div className="relative bg-black" id={item?.code}>
-                <img src={`/assets/images/pages/${item?.images[0]?.image}`} className="min-h-[260px] w-full object-cover" alt="" />
+                <img src={`/assets/images/pages/${item?.images[0]?.image}`} className="min-h-[300px] w-full object-cover" alt="" />
                 <div className="absolute top-0 left-0">
                     <div className="flex flex-col p-4 text-start md:text-left lg:grid-cols-2 lg:p-16">
                         <h1 className="font-proxima-nova-bold text-xl leading-[30px] text-white md:mb-4 md:text-2xl md:leading-[30px] lg:text-4xl lg:leading-[50px] 2xl:text-5xl">
@@ -38,21 +38,21 @@ export function FeatureSection({ item, defaultDropDown = true }: { item: any; de
                     <div ref={bannerRef} className="h-[90px]"></div>
                     <ScrollArea className="w-full whitespace-nowrap">
                         {item?.children?.length > 0 && (
-                            <div className="flex w-full flex-nowrap justify-end gap-2.5 px-4 py-2.5 lg:justify-end lg:px-16">
+                            <div className="flex w-full flex-nowrap overflow-visible justify-end gap-2.5 px-4 py-2.5 lg:justify-end lg:px-16">
                                 {item?.children?.map((child, index) => (
                                     <button
                                         key={index}
                                         onClick={() => handleSelect(child)}
                                         className={`${
                                             child.id === selectedData?.id ? 'border border-white' : ''
-                                        } bg-true-primary/45 flex aspect-square size-[100px] shrink-0 flex-col items-center justify-center p-1 transition-transform duration-300 hover:scale-110 lg:size-[125px] lg:p-2 2xl:size-[170px]`}
+                                        } bg-true-primary/45 flex aspect-square size-[135px] shrink-0 flex-col items-center justify-start p-1 transition-transform duration-300 hover:scale-110 py-6 2xl:py-8 2xl:size-[175px]`}
                                     >
                                         <img
                                             src={`/assets/images/pages/${child.images[0]?.image}`}
-                                            className="w-[40px] aspect-square object-contain lg:w-[50px]"
+                                            className="w-[50px] aspect-square object-contain 2xl:w-[70px]"
                                             alt=""
                                         />
-                                        <p className="mt-2 line-clamp-3 text-center text-[10px] whitespace-normal text-white lg:text-xs 2xl:text-base">
+                                        <p className="mt-2 line-clamp-3 text-center overflow-visible leading-4 2xl:leading-5 whitespace-normal text-white text-xs 2xl:text-base">
                                             {currentLocale == 'kh' ? child?.title_kh : child?.title}
                                         </p>
                                     </button>

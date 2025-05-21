@@ -37,7 +37,7 @@ const CareerList = ({ careers }: { careers: any[] }) => {
                     <div>
                         <Dialog>
                             <DialogTrigger>
-                                <span className="font-proxima-nova-regular bg-primary px-4 py-1 text-xs text-white capitalize transition duration-200 hover:underline 2xl:text-2xl">
+                                <span className="font-proxima-nova-regular bg-true-primary px-4 py-1 text-xs text-white capitalize transition duration-200 hover:underline 2xl:text-2xl">
                                     {t('More Details')}
                                 </span>
                             </DialogTrigger>

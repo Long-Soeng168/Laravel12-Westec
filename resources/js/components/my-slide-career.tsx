@@ -56,7 +56,7 @@ export default function MySlideCareer({ teams }: { teams: any[] }) {
                                             <div className="mt-2">
                                                 <Dialog>
                                                     <DialogTrigger>
-                                                        <span className="font-proxima-nova-regular bg-primary px-4 py-1 text-xs text-white capitalize transition duration-200 hover:underline 2xl:text-xl">
+                                                        <span className="font-proxima-nova-regular bg-true-primary px-4 py-1 text-xs text-white capitalize transition duration-200 hover:underline 2xl:text-xl">
                                                             {t('Read More')}
                                                         </span>
                                                     </DialogTrigger>
@@ -76,10 +76,11 @@ export default function MySlideCareer({ teams }: { teams: any[] }) {
                                                             />
                                                             <div className="order-2 p-2 text-white lg:p-4">
                                                                 <div className="mb-4">
-                                                                    <h1 className="mt-2 text-xl font-bold">
+                                                                    <h1 className="mt-2 text-xl font-bold 2xl:text-2xl">
                                                                         {currentLocale == 'kh' ? item?.name_kh : item?.name}
                                                                     </h1>
                                                                     <p
+                                                                     className='2xl:text-xl'
                                                                         dangerouslySetInnerHTML={{
                                                                             __html:
                                                                                 currentLocale == 'kh'
@@ -90,7 +91,7 @@ export default function MySlideCareer({ teams }: { teams: any[] }) {
                                                                 </div>
                                                                 <div className="bg-black/30 p-2">
                                                                     <div
-                                                                        className="prose prose-p:m-0 flex max-w-none flex-col gap-4 space-y-2 font-medium text-white lg:text-sm"
+                                                                        className="prose prose-p:m-0 flex max-w-none flex-col gap-4 space-y-2 font-medium text-white lg:text-sm 2xl:text-lg"
                                                                         dangerouslySetInnerHTML={{
                                                                             __html:
                                                                                 currentLocale == 'kh'
@@ -112,8 +113,8 @@ export default function MySlideCareer({ teams }: { teams: any[] }) {
                     ))}
                 </CarouselContent>
                 <div className="my-8 flex items-center justify-center gap-8">
-                    <CarouselPrevious className="relative translate-0" />
-                    <CarouselNext className="relative translate-0" />
+                    <CarouselPrevious className="relative translate-0 border dark:bg-white" />
+                    <CarouselNext className="relative translate-0 border dark:bg-white" />
                 </div>
             </Carousel>
         </div>

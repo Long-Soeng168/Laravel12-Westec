@@ -19,8 +19,8 @@ const Contact = () => {
                 <img src={`/assets/images/banners/${banners?.image}`} alt="" />
             </section>
             <section id="Project-Inquiry">
-                <Headline title={t("Project Inquiry?")} />
-                <div className="bg-primary px-4 py-4 text-white lg:px-16">
+                <Headline title={t('Project Inquiry?')} />
+                <div className="bg-true-primary px-4 py-4 text-white lg:px-16">
                     <div className="grid grid-cols-1 gap-4 gap-x-8 md:grid-cols-3">
                         <div className="w-full max-w-full">
                             <Label className="2xl:text-xl" htmlFor="name">
@@ -113,18 +113,22 @@ const Contact = () => {
                                 />
                             </div>
                         </div>
-                        <Button variant="secondary" className="h-full rounded-none 2xl:text-xl">
+                        <Button variant="secondary" className="h-full bg-white text-true-primary rounded-none 2xl:text-xl">
                             {t('Submit')}
                         </Button>
                     </div>
                 </div>
             </section>
             {contact_heading_1 && (
-                <ContactSection showButton={false} bg="bg-true-primary-four" title={currentLocale == 'kh' ? contact_heading_1?.title_kh : contact_heading_1?.title} />
+                <ContactSection
+                    showButton={false}
+                    bg="bg-true-primary-four"
+                    title={currentLocale == 'kh' ? contact_heading_1?.title_kh : contact_heading_1?.title}
+                />
             )}
             <section id="Get-Support">
                 <h1 className="my-6 inline-block border-[#273892] px-4 text-2xl font-semibold text-[#273892] lg:px-16">{t('Get Support?')}</h1>
-                <div className="bg-primary px-4 py-4 text-white lg:px-16">
+                <div className="bg-true-primary px-4 py-4 text-white lg:px-16">
                     <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
                         <div className="grid grid-cols-1 content-start gap-4 gap-x-8 md:grid-cols-1">
                             <div className="w-full max-w-full">
@@ -169,7 +173,7 @@ const Contact = () => {
                                 <Input
                                     id="subject"
                                     type="subject"
-                                    placeholder={t("Subject")}
+                                    placeholder={t('Subject')}
                                     className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
                                 />
                             </div>
@@ -180,13 +184,13 @@ const Contact = () => {
                                 <Textarea
                                     id="Your inquiry"
                                     placeholder={t('Your inquiry')}
-                                    className="min-h-[112px] w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:text-xl"
+                                    className="min-h-[112px] w-full max-w-full dark:bg-white rounded-none border-none bg-white text-black shadow-none 2xl:text-xl"
                                 />
                             </div>
                         </div>
                     </div>
                     <div className="mt-8 flex flex-wrap justify-end gap-4">
-                        <Button variant="secondary" className="h-full rounded-none 2xl:text-xl">
+                        <Button variant="secondary" className="h-full bg-white text-true-primary rounded-none 2xl:text-xl">
                             {t('Submit')}
                         </Button>
                     </div>

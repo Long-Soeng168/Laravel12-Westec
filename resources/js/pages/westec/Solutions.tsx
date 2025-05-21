@@ -17,12 +17,12 @@ const Solutions = () => {
             {smart_home_detail?.title && <FeatureSection item={smart_home_detail} defaultDropDown={false} />}
 
             {contact_heading_1 && (
-                <ContactSection bg="bg-primary" title={currentLocale == 'kh' ? contact_heading_1?.title_kh : contact_heading_1?.title} />
+                <ContactSection bg="bg-true-primary" title={currentLocale == 'kh' ? contact_heading_1?.title_kh : contact_heading_1?.title} />
             )}
             {commercial_detail?.title && <FeatureSection item={commercial_detail} defaultDropDown={false} />}
             {it_solution_detail?.title && <FeatureSection item={it_solution_detail} defaultDropDown={false} />}
 
-            {contact_heading_2 && <ContactSection title={currentLocale == 'kh' ? contact_heading_2?.title_kh : contact_heading_2?.title} />}
+            {contact_heading_2 && <ContactSection bg="bg-true-primary" title={currentLocale == 'kh' ? contact_heading_2?.title_kh : contact_heading_2?.title} />}
         </WestecLayout>
     );
 };

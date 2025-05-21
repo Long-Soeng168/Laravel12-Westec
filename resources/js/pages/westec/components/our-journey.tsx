@@ -48,10 +48,10 @@ export function OurJourney({ items }: { items: any[] }) {
                                 <p className={`text-${Colors[index % Colors.length]} invisible mr-2 translate-y-1 text-2xl font-bold 2xl:text-4xl`}>
                                     {item.code}
                                 </p>
-                                <div className="flex flex-1 flex-col">
+                                <div className="flex flex-1 flex-col text-black">
                                     <p className="py-1 text-xl 2xl:text-2xl">{currentLocale == 'kh' ? item?.title_kh : item?.title}</p>
                                     <p
-                                        className="text-sm 2xl:text-lg"
+                                        className="text-sm 2xl:text-lg "
                                         dangerouslySetInnerHTML={{
                                             __html: currentLocale == 'kh' ? item?.short_description_kh : item?.short_description,
                                         }}
@@ -64,8 +64,8 @@ export function OurJourney({ items }: { items: any[] }) {
                 ))}
             </CarouselContent>
             <div className="mt-10 flex items-center justify-center gap-8">
-                <CarouselPrevious className="relative translate-0" />
-                <CarouselNext className="relative translate-0" />
+                <CarouselPrevious className="relative translate-0 dark:bg-white border" />
+                <CarouselNext className="relative translate-0 dark:bg-white border" />
             </div>
         </Carousel>
     );

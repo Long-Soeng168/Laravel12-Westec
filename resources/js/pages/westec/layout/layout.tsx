@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const WestecLayout = ({ children }: LayoutProps) => {
     return (
-        <>
+        <div className='bg-white'>
             <header className="sticky top-0 z-50">
                 <MyNavbar />
             </header>
@@ -16,7 +16,7 @@ const WestecLayout = ({ children }: LayoutProps) => {
             <main className="mx-auto min-h-screen max-w-[2000px]">{children}</main>
 
             <MyFooter />
-        </>
+        </div>
     );
 };
 

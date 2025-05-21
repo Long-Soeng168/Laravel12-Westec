@@ -4,7 +4,7 @@ import Headline from './headline';
 const EventList = ({ items }: { items: any }) => {
     const { t, currentLocale } = useTranslation();
     return (
-        <div className="mx-auto max-w-[4000px] bg-white">
+        <div className="mx-auto max-w-[4000px]">
             <Headline title={t('Events & Promotions')} />
             {items?.length > 0 && <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">{items?.map((item) => BlogCard(item))}</div>}
         </div>
@@ -12,7 +12,7 @@ const EventList = ({ items }: { items: any }) => {
 
     function BlogCard(item: any) {
         return (
-            <div className="flex flex-col overflow-hidden border-[0.5px] bg-[#36454f] hover:shadow-lg">
+            <div className="flex flex-col overflow-hidden border-white border-[0.5px] bg-[#36454f] hover:shadow-lg">
                 <a href={item.link || '#'}>
                     <img className="aspect-[1/1] w-full object-cover" src={`/assets/images/posts/thumb/${item.images[0]?.image}`} alt="" />
                 </a>
@@ -40,7 +40,7 @@ const EventList = ({ items }: { items: any }) => {
                     <div>
                         <a
                             href={item.link || '#'}
-                            className="font-proxima-nova-regular bg-primary px-4 py-1 text-base text-white capitalize transition duration-200 hover:underline 2xl:text-2xl"
+                            className="font-proxima-nova-regular bg-true-primary px-4 py-1 text-base text-white capitalize transition duration-200 hover:underline 2xl:text-2xl"
                         >
                             {t('Read More')}
                         </a>
