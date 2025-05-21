@@ -23,11 +23,11 @@ export function FeatureSection({ item, defaultDropDown = true }: { item: any; de
                 <img src={`/assets/images/pages/${item?.images[0]?.image}`} className="min-h-[300px] w-full object-cover" alt="" />
                 <div className="absolute top-0 left-0">
                     <div className="flex flex-col p-4 text-start md:text-left lg:grid-cols-2 lg:p-16">
-                        <h1 className="font-proxima-nova-bold text-xl leading-[30px] text-white md:mb-4 md:text-2xl md:leading-[30px] lg:text-4xl lg:leading-[50px] 2xl:text-5xl">
+                        <h1 className="font-proxima-nova-bold text-xl leading-[30px] text-white md:mb-4 md:text-2xl md:leading-[30px] lg:text-4xl lg:leading-[50px] 2xl:text-4xl">
                             {currentLocale == 'kh' ? item?.title_kh : item?.title}
                         </h1>
                         <p
-                            className="font-proxima-nova-regular text-base text-white capitalize md:max-w-[65%] lg:text-xl 2xl:text-3xl"
+                            className="font-proxima-nova-regular text-base text-white capitalize md:max-w-[65%] lg:text-xl 2xl:text-2xl"
                             dangerouslySetInnerHTML={{
                                 __html: currentLocale == 'kh' ? item?.short_description_kh : item?.short_description,
                             }}
