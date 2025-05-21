@@ -17,7 +17,7 @@ const BlogsList = ({ items }: { items: any }) => {
                     <img className="aspect-[1/1] w-full object-cover" src={`/assets/images/posts/thumb/${item.images[0]?.image}`} alt="" />
                 </a>
 
-                <div className="p-4">
+                <div className="p-4 flex flex-col h-full justify-between">
                     <div className="mb-8">
                         <a
                             href={item.link || '#'}
