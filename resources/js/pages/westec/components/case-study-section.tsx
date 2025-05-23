@@ -37,11 +37,11 @@ export function CaseStudySection({ item, defaultDropDown = true }: { item: any; 
                     <div ref={bannerRef} className="h-[90px]"></div>
                     <div className="flex w-full flex-nowrap justify-center gap-2.5 px-4 py-2.5 lg:justify-end lg:px-16">
                         {selectedData != '' ? (
-                            <Button className="h-7 rounded-none 2xl:h-10 2xl:text-xl" onClick={() => handleSelect('')}>
+                            <Button className="h-7 rounded-none 2xl:h-10 2xl:text-lg" onClick={() => handleSelect('')}>
                                 {t('Show Less')} <ChevronUp />
                             </Button>
                         ) : (
-                            <Button className="h-7 rounded-none 2xl:h-10 2xl:text-xl" onClick={() => handleSelect(item)}>
+                            <Button className="h-7 rounded-none 2xl:h-10 2xl:text-lg" onClick={() => handleSelect(item)}>
                                 {t('Read More')} <ChevronDown />
                             </Button>
                         )}

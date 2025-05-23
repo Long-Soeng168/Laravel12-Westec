@@ -28,7 +28,7 @@ export const MenuItem = ({
       <motion.a
         // href={item.toLowerCase() === "about us" ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
         transition={{ duration: 0.3 }}
-        className="bg-true-primary text-sm whitespace-nowrap 2xl:text-lg 2xl:px-8 px-6 py-0.5 cursor-pointer font-proxima-nova-regular text-white hover:opacity-[0.9] dark:text-white flex gap-0.5 items-center"
+        className="bg-true-primary text-xs whitespace-nowrap 2xl:text-sm 2xl:px-7 px-6 py-0.5 cursor-pointer font-proxima-nova-regular text-white hover:opacity-[0.9] dark:text-white flex gap-0.5 items-center"
       >
         {item}  
         {
@@ -122,7 +122,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
     <Link
     prefetch
       {...rest}
-      className="text-white text-[13px] 2xl:text-sm max-w-32 hover:underline "
+      className="text-white text-xs 2xl:text-xs max-w-32 hover:underline "
     >
       {children}
     </Link>

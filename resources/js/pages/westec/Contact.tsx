@@ -23,36 +23,36 @@ const Contact = () => {
                 <div className="bg-true-primary px-4 py-4 text-white lg:px-16">
                     <div className="grid grid-cols-1 gap-4 gap-x-8 md:grid-cols-3">
                         <div className="w-full max-w-full">
-                            <Label className="2xl:text-xl" htmlFor="name">
+                            <Label className="2xl:text-lg" htmlFor="name">
                                 {t('Name')}
                             </Label>
                             <Input
                                 id="name"
                                 type="name"
                                 placeholder={t('Name')}
-                                className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
+                                className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-lg"
                             />
                         </div>
                         <div className="w-full max-w-full">
-                            <Label className="2xl:text-xl" htmlFor="email">
+                            <Label className="2xl:text-lg" htmlFor="email">
                                 {t('Email')}
                             </Label>
                             <Input
                                 id="email"
                                 type="email"
                                 placeholder={t('Email')}
-                                className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
+                                className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-lg"
                             />
                         </div>
                         <div className="w-full max-w-full">
-                            <Label className="2xl:text-xl" htmlFor="phone">
+                            <Label className="2xl:text-lg" htmlFor="phone">
                                 {t('Phone number')}
                             </Label>
                             <Input
                                 id="phone"
                                 type="phone"
                                 placeholder={t('Phone')}
-                                className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
+                                className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-lg"
                             />
                         </div>
                     </div>
@@ -105,15 +105,15 @@ const Contact = () => {
                                     {t('Others')}
                                 </label>
                             </div>
-                            <div className="w-full max-w-full lg:w-lg 2xl:h-10 2xl:text-xl">
+                            <div className="w-full max-w-full lg:w-lg 2xl:h-10 2xl:text-lg">
                                 <Input
                                     id="other"
                                     type="other"
-                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
+                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-lg"
                                 />
                             </div>
                         </div>
-                        <Button variant="secondary" className="h-full bg-white text-true-primary rounded-none 2xl:text-xl">
+                        <Button variant="secondary" className="text-true-primary h-full rounded-none bg-white 2xl:text-lg">
                             {t('Submit')}
                         </Button>
                     </div>
@@ -132,65 +132,65 @@ const Contact = () => {
                     <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
                         <div className="grid grid-cols-1 content-start gap-4 gap-x-8 md:grid-cols-1">
                             <div className="w-full max-w-full">
-                                <Label className="2xl:text-xl" htmlFor="name">
+                                <Label className="2xl:text-lg" htmlFor="name">
                                     {t('Name')}
                                 </Label>
                                 <Input
                                     id="name"
                                     type="name"
                                     placeholder={t('Name')}
-                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
+                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-lg"
                                 />
                             </div>
                             <div className="w-full max-w-full">
-                                <Label className="2xl:text-xl" htmlFor="email">
+                                <Label className="2xl:text-lg" htmlFor="email">
                                     {t('Email')}
                                 </Label>
                                 <Input
                                     id="email"
                                     type="email"
                                     placeholder={t('Email')}
-                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
+                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-lg"
                                 />
                             </div>
                             <div className="w-full max-w-full">
-                                <Label className="2xl:text-xl" htmlFor="phone">
+                                <Label className="2xl:text-lg" htmlFor="phone">
                                     {t('Phone number')}
                                 </Label>
                                 <Input
                                     id="phone"
                                     type="phone"
                                     placeholder={t('Phone')}
-                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
+                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-lg"
                                 />
                             </div>
                         </div>
                         <div className="grid grid-cols-1 gap-4 gap-x-8 md:grid-cols-1">
                             <div className="w-full max-w-full">
-                                <Label className="2xl:text-xl" htmlFor="name">
+                                <Label className="2xl:text-lg" htmlFor="name">
                                     {t('Subject')}
                                 </Label>
                                 <Input
                                     id="subject"
                                     type="subject"
                                     placeholder={t('Subject')}
-                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-xl"
+                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:h-10 2xl:text-lg"
                                 />
                             </div>
                             <div className="w-full max-w-full">
-                                <Label className="2xl:text-xl" htmlFor="Your inquiry">
+                                <Label className="2xl:text-lg" htmlFor="Your inquiry">
                                     {t('Your inquiry')}
                                 </Label>
                                 <Textarea
                                     id="Your inquiry"
                                     placeholder={t('Your inquiry')}
-                                    className="min-h-[112px] w-full max-w-full dark:bg-white rounded-none border-none bg-white text-black shadow-none 2xl:text-xl"
+                                    className="min-h-[112px] w-full max-w-full rounded-none border-none bg-white text-black shadow-none 2xl:text-lg dark:bg-white"
                                 />
                             </div>
                         </div>
                     </div>
                     <div className="mt-8 flex flex-wrap justify-end gap-4">
-                        <Button variant="secondary" className="h-full bg-white text-true-primary rounded-none 2xl:text-xl">
+                        <Button variant="secondary" className="text-true-primary h-full rounded-none bg-white 2xl:text-xl">
                             {t('Submit')}
                         </Button>
                     </div>

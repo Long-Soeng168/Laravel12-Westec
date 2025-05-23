@@ -20,7 +20,7 @@ const About = () => {
                         className="max-h-[800px] min-h-[300px] w-full object-cover"
                         alt=""
                     />
-                    <div className="bg-true-primary/50 absolute top-1/2 left-4 max-w-[80%] -translate-y-1/2 p-4 text-white lg:left-16 lg:max-w-[750px] 2xl:max-w-[970px]">
+                    <div className="bg-true-primary/50 absolute top-1/2 left-4 max-w-[80%] -translate-y-1/2 p-4 text-white lg:left-16 lg:max-w-[750px] 2xl:max-w-[950px]">
                         {/* <h1 className="mt-2 mb-4 text-xl font-bold text-yellow-500 lg:text-4xl">Suor Sdey Cambodia!</h1>
                         <div className="mb-2 flex flex-col gap-4 text-xs font-medium lg:text-2xl">
                             <p>At Westec Corporation, we don’t just follow the latest trends in technology—we lead them.</p>
@@ -34,7 +34,7 @@ const About = () => {
                             </p>
                         </div> */}
                         <div
-                            className="prose mb-2 text-xs font-medium text-white lg:text-xl xl:text-3xl"
+                            className="prose mb-2 text-xs font-medium text-white lg:text-xl xl:text-2xl"
                             dangerouslySetInnerHTML={{
                                 __html: currentLocale == 'kh' ? abouts_detail?.short_description_kh : abouts_detail?.short_description,
                             }}
@@ -76,7 +76,7 @@ const About = () => {
                         </div>
                         <div className="flex max-w-5xl items-center justify-center px-4 lg:px-20">
                             <div
-                                className="prose prose-h2:text-white mb-2 text-xs font-medium text-white lg:text-3xl"
+                                className="prose prose-h2:text-white mb-2 text-xs font-medium text-white lg:text-2xl"
                                 dangerouslySetInnerHTML={{
                                     __html: currentLocale == 'kh' ? vision_detail?.short_description_kh : vision_detail?.short_description,
                                 }}

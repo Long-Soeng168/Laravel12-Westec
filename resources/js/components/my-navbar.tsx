@@ -15,7 +15,7 @@ export function MyNavbar({ className }: { className?: string }) {
     return (
         <>
             <div className={cn('mx-auto max-w-[2000px]', className)}>
-                <div className="bg-white flex h-full items-center justify-between border-b px-4 py-4 lg:px-16 lg:py-8">
+                <div className="flex h-full items-center justify-between border-b bg-white px-4 py-4 lg:px-16 lg:py-8">
                     <a href="/" className="w-50">
                         <img src="/assets/westec/images/logo.png" />
                     </a>
@@ -30,7 +30,7 @@ export function MyNavbar({ className }: { className?: string }) {
                                         item={currentLocale == 'kh' ? pages_menus?.abouts.title_kh : pages_menus?.abouts.title}
                                     >
                                         {pages_menus?.abouts.children?.length > 0 && (
-                                            <div className="flex flex-col space-y-4 text-sm">
+                                            <div className="flex flex-col space-y-4">
                                                 {pages_menus?.abouts.children?.map((about) => (
                                                     <HoveredLink href={`/about#${about?.code}`}>
                                                         {currentLocale == 'kh' ? about?.title_kh : about?.title}
@@ -50,7 +50,7 @@ export function MyNavbar({ className }: { className?: string }) {
                                         item={currentLocale == 'kh' ? pages_menus?.solutions.title_kh : pages_menus?.solutions.title}
                                     >
                                         {pages_menus?.solutions.children?.length > 0 && (
-                                            <div className="flex flex-col space-y-4 text-sm">
+                                            <div className="flex flex-col space-y-4">
                                                 {pages_menus?.solutions.children?.map((solution) => (
                                                     <HoveredLink href={`/solutions#${solution?.code}`}>
                                                         {currentLocale == 'kh' ? solution?.title_kh : solution?.title}
@@ -61,6 +61,16 @@ export function MyNavbar({ className }: { className?: string }) {
                                     </MenuItem>
                                 </Link>
                             )}
+
+                            <Link prefetch href={`#`}>
+                                <MenuItem setActive={setActive} active={active} item="Featured Solutions">
+                                    <div className="flex flex-col space-y-4">
+                                        <HoveredLink href={`#`}>Featured Solutions</HoveredLink>
+                                        <HoveredLink href={`#`}>Solution Specs</HoveredLink>
+                                    </div>
+                                </MenuItem>
+                            </Link>
+
                             {pages_menus?.case_studies && (
                                 <Link prefetch href={`/case_studies`}>
                                     <MenuItem
@@ -69,7 +79,7 @@ export function MyNavbar({ className }: { className?: string }) {
                                         item={currentLocale == 'kh' ? pages_menus?.case_studies.title_kh : pages_menus?.case_studies.title}
                                     >
                                         {pages_menus?.case_studies.children?.length > 0 && (
-                                            <div className="flex flex-col space-y-4 text-sm">
+                                            <div className="flex flex-col space-y-4">
                                                 {pages_menus?.case_studies.children?.map((case_study) => (
                                                     <HoveredLink href={`/case_studies#${case_study?.code}`}>
                                                         {currentLocale == 'kh' ? case_study?.title_kh : case_study?.title}
@@ -83,7 +93,7 @@ export function MyNavbar({ className }: { className?: string }) {
 
                             <Link prefetch href={`/#partners`}>
                                 <MenuItem setActive={setActive} active={active} item={t('Partners')}>
-                                    {/* <div className="flex flex-col space-y-4 text-sm">
+                                    {/* <div className="flex flex-col space-y-4">
                                         <HoveredLink href="/#partners">Our Partners</HoveredLink>
                                     </div> */}
                                 </MenuItem>
@@ -91,7 +101,7 @@ export function MyNavbar({ className }: { className?: string }) {
 
                             <Link prefetch href={`/career`}>
                                 <MenuItem setActive={setActive} active={active} item={t('Career')}>
-                                    <div className="flex flex-col space-y-4 text-sm">
+                                    <div className="flex flex-col space-y-4">
                                         <HoveredLink href="/career">{t('Employee Highlights')}</HoveredLink>
                                         <HoveredLink href="/career">{t('Career')}</HoveredLink>
                                     </div>
@@ -100,7 +110,7 @@ export function MyNavbar({ className }: { className?: string }) {
 
                             <Link prefetch href={`/#newsId`}>
                                 <MenuItem setActive={setActive} active={active} item={t('News')}>
-                                    <div className="flex flex-col space-y-4 text-sm">
+                                    <div className="flex flex-col space-y-4">
                                         <HoveredLink href="/#newsId">{t('News & Updates')}</HoveredLink>
                                         <HoveredLink href="/#eventsId">{t('Events & Promotions')}</HoveredLink>
                                     </div>
@@ -109,7 +119,7 @@ export function MyNavbar({ className }: { className?: string }) {
 
                             <Link prefetch href={`/contact`}>
                                 <MenuItem setActive={setActive} active={active} item={t('Contact Us')}>
-                                    <div className="flex flex-col space-y-4 text-sm">
+                                    <div className="flex flex-col space-y-4">
                                         <HoveredLink href="/contact#Project-Inquiry">{t('Project Inquiry?')}</HoveredLink>
                                         <HoveredLink href="/contact#Get-Support">{t('Get Support?')}</HoveredLink>
                                         <HoveredLink href="/contact#contact-google-map">{t('Location (Map)')}</HoveredLink>

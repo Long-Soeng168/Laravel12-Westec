@@ -49,11 +49,11 @@ const MyFooter = () => {
 
                     {/* Footer Links Section */}
                     <div className="w-full md:col-span-4">
-                        <div className="font-proxima-thin grid grid-cols-2 gap-6 text-black xl:grid-cols-3">
+                        <div className="font-proxima-thin grid grid-cols-2 gap-6 text-black xl:grid-cols-4">
                             {/* About Us */}
                             {pages_menus?.abouts && (
                                 <div className="flex-1">
-                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-xl">
+                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-lg">
                                         <Link href={`/about`} prefetch>
                                             {currentLocale == 'kh' ? pages_menus?.abouts?.title_kh : pages_menus?.abouts?.title}
                                         </Link>
@@ -61,7 +61,7 @@ const MyFooter = () => {
                                     <ul className="mt-6 list-disc space-y-1 pl-3 marker:text-gray-400 2xl:text-xl">
                                         {pages_menus?.abouts?.children?.length > 0 &&
                                             pages_menus?.abouts?.children?.map((child) => (
-                                                <li className="cursor-pointer text-base hover:underline 2xl:text-lg">
+                                                <li className="cursor-pointer text-base hover:underline 2xl:text-base">
                                                     <Link href={`/about#${child?.code}`}>
                                                         {' '}
                                                         {currentLocale == 'kh' ? child?.title_kh : child?.title}
@@ -73,7 +73,7 @@ const MyFooter = () => {
                             )}
                             {pages_menus?.solutions && (
                                 <div className="flex-1">
-                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-xl">
+                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-lg">
                                         <Link href={`/solutions`} prefetch>
                                             {currentLocale == 'kh' ? pages_menus?.solutions?.title_kh : pages_menus?.solutions?.title}
                                         </Link>
@@ -81,7 +81,7 @@ const MyFooter = () => {
                                     <ul className="mt-6 list-disc space-y-1 pl-3 marker:text-gray-400 2xl:text-xl">
                                         {pages_menus?.solutions?.children?.length > 0 &&
                                             pages_menus?.solutions?.children?.map((child) => (
-                                                <li className="cursor-pointer text-base hover:underline 2xl:text-lg">
+                                                <li className="cursor-pointer text-base hover:underline 2xl:text-base">
                                                     <Link href={`/solutions#${child?.code}`}>
                                                         {' '}
                                                         {currentLocale == 'kh' ? child?.title_kh : child?.title}
@@ -91,9 +91,22 @@ const MyFooter = () => {
                                     </ul>
                                 </div>
                             )}
+                            <div className="flex-1">
+                                <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-lg">
+                                    <Link href={`#`}>Featured Solutions</Link>
+                                </h3>
+                                <ul className="mt-6 list-disc space-y-1 pl-3 marker:text-gray-400 2xl:text-xl">
+                                    <li className="cursor-pointer text-base hover:underline 2xl:text-base">
+                                        <Link href={`#`}>Featured Solutions</Link>
+                                    </li>
+                                    <li className="cursor-pointer text-base hover:underline 2xl:text-base">
+                                        <Link href={`#`}>Solution Specs</Link>
+                                    </li>
+                                </ul>
+                            </div>
                             {pages_menus?.case_studies && (
                                 <div className="flex-1">
-                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-xl">
+                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-lg">
                                         <Link href={`/case_studies`} prefetch>
                                             {currentLocale == 'kh' ? pages_menus?.case_studies?.title_kh : pages_menus?.case_studies?.title}
                                         </Link>
@@ -101,7 +114,7 @@ const MyFooter = () => {
                                     <ul className="mt-6 list-disc space-y-1 pl-3 marker:text-gray-400 2xl:text-xl">
                                         {pages_menus?.case_studies?.children?.length > 0 &&
                                             pages_menus?.case_studies?.children?.map((child) => (
-                                                <li className="cursor-pointer text-base hover:underline 2xl:text-lg">
+                                                <li className="cursor-pointer text-base hover:underline 2xl:text-base">
                                                     <Link href={`/case_studies#${child?.code}`}>
                                                         {' '}
                                                         {currentLocale == 'kh' ? child?.title_kh : child?.title}
@@ -114,10 +127,10 @@ const MyFooter = () => {
                         </div>
 
                         {/* Social & Chat Sections */}
-                        <div className="mt-16 grid grid-cols-2 gap-6 text-sm text-gray-500 xl:grid-cols-3">
+                        <div className="mt-22 grid grid-cols-2 gap-6 text-sm text-gray-500 xl:grid-cols-4">
                             {/* Follow Us */}
-                            <div className="w-full sm:flex-1">
-                                <h3 className="bg-true-primary font-proxima-nova-regular inline-block px-6 py-1 text-base text-white 2xl:text-xl">
+                            <div className="w-full sm:flex-1 col-span-2">
+                                <h3 className="bg-true-primary font-proxima-nova-regular inline-block px-6 py-1 text-base text-white 2xl:text-lg">
                                     {t('Follow Us!')}
                                 </h3>
                                 <div className="mt-6 flex gap-2">
@@ -126,16 +139,15 @@ const MyFooter = () => {
                                             <img
                                                 src={`/assets/images/links/${item.image}`}
                                                 alt=""
-                                                className="background size-10 object-contain p-1.5 transition-all duration-500 hover:scale-125 2xl:size-14"
+                                                className="background size-10 shrink-0 object-contain p-1.5 transition-all duration-500 hover:scale-125 2xl:size-14"
                                             />
                                         </a>
                                     ))}
                                 </div>
                             </div>
-                            <div></div>
                             {/* Chat With Us */}
-                            <div className="flex-1">
-                                <h3 className="bg-true-primary font-proxima-nova-regular inline-block px-6 py-1 text-base text-white 2xl:text-xl">
+                            <div className="flex-1 col-span-2">
+                                <h3 className="bg-true-primary font-proxima-nova-regular inline-block px-6 py-1 text-base text-white 2xl:text-lg">
                                     {t('Chat With Us!')}
                                 </h3>
                                 <div className="mt-6 flex gap-2">

@@ -16,7 +16,7 @@ export function ContactSection({
             <div className={`relative mx-auto flex w-full flex-col px-4 py-10 lg:px-16 lg:py-20 ${bg}`}>
                 {/* Left Section */}
                 <div className="flex flex-col items-end text-left">
-                    <h1 className="font-proxima-nova-bold whitespace-pre-line mb-4 max-w-[80%] text-end text-xl leading-[30px] text-white md:text-3xl md:leading-[30px] lg:max-w-[80%] lg:text-4xl lg:leading-[50px] 2xl:text-5xl">
+                    <h1 className="font-proxima-nova-bold whitespace-pre-line mb-4 max-w-[80%] text-end text-xl  text-white md:text-3xl lg:max-w-[80%] lg:text-4xl 2xl:text-4xl">
                         {title}
                     </h1>
                     {showButton && (
