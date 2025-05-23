@@ -62,7 +62,7 @@ export default function MySlideCareer({ teams }: { teams: any[] }) {
                                                     </DialogTrigger>
                                                     <DialogContent
                                                         showCloseButton={true}
-                                                        className="bg-primary min-w-[95%] gap-0 rounded-none p-0 text-white sm:min-w-[95%]"
+                                                        className="bg-true-primary min-w-[95%] gap-0 rounded-none p-0 text-white sm:min-w-[95%]"
                                                     >
                                                         <DialogHeader>
                                                             <DialogTitle className="hidden"></DialogTitle>

@@ -40,7 +40,7 @@ const BlogsList = ({ items }: { items: any }) => {
                     <div>
                         <a
                             href={item.link || '#'}
-                            className="font-proxima-nova-regular bg-true-primary px-4 py-1 text-base text-white capitalize transition duration-200 hover:underline 2xl:text-xl"
+                            className="font-proxima-nova-regular bg-true-primary px-4 py-1 text-xs text-white capitalize transition duration-200 hover:underline 2xl:text-xl"
                         >
                             {t('Read More')}
                         </a>

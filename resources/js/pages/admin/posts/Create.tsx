@@ -26,8 +26,8 @@ import * as z from 'zod';
 const formSchema = z.object({
     title: z.string().min(1).max(255),
     title_kh: z.string().max(255).optional(),
-    short_description: z.string().max(500).optional(),
-    short_description_kh: z.string().max(500).optional(),
+    short_description: z.string().max(1000).optional(),
+    short_description_kh: z.string().max(1000).optional(),
     link: z.string().max(255).optional(),
     type: z.string().optional(),
     status: z.string().optional(),
@@ -128,11 +128,11 @@ export default function Create() {
                                 description: page.props.flash.success,
                             });
                         }
-                          if (page.props.flash?.error) {
-                                                    toast.error('Error', {
-                                                        description: page.props.flash.error,
-                                                    });
-                                                }
+                        if (page.props.flash?.error) {
+                            toast.error('Error', {
+                                description: page.props.flash.error,
+                            });
+                        }
                     },
                     onError: (e) => {
                         toast.error('Error', {
@@ -343,7 +343,9 @@ export default function Create() {
                                                 </FormControl>
                                                 <SelectContent>
                                                     {types.map((typeObject) => (
-                                                        <SelectItem key={typeObject.id + typeObject.type} value={typeObject.type}>{typeObject.label}</SelectItem>
+                                                        <SelectItem key={typeObject.id + typeObject.type} value={typeObject.type}>
+                                                            {typeObject.label}
+                                                        </SelectItem>
                                                     ))}
                                                     {/* <SelectItem value="link">Link</SelectItem> */}
                                                 </SelectContent>
@@ -466,7 +468,7 @@ export default function Create() {
                                             <div className="flex w-full flex-col items-center justify-center p-8">
                                                 <CloudUpload className="h-10 w-10 text-gray-500" />
                                                 <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
-                                                     <span className="font-semibold">{t('Click to upload')}</span>
+                                                    <span className="font-semibold">{t('Click to upload')}</span>
                                                     &nbsp; or drag and drop
                                                 </p>
                                                 <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF</p>
@@ -525,7 +527,7 @@ export default function Create() {
                         </div>
                     )}
                     {/* Start Long Description */}
-                    {/* <div key={editorKey} className="space-y-8">
+                    <div key={editorKey} className="space-y-8">
                         <div>
                             <p className="mb-1 text-sm font-medium">{t('Long Description')}</p>
                             <MyCkeditor5 data={long_description} setData={setLong_description} />
@@ -534,7 +536,7 @@ export default function Create() {
                             <p className="mb-1 text-sm font-medium">{t('Long Description Khmer')}</p>
                             <MyCkeditor5 data={long_description_kh} setData={setLong_description_kh} />
                         </div>
-                    </div> */}
+                    </div>
 
                     {/* End Long Description */}
                     {progress && <ProgressWithValue value={progress.percentage} position="start" />}
