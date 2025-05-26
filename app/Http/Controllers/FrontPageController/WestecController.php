@@ -292,7 +292,7 @@ class WestecController extends Controller
 
                 $data['position'] = Position::where('code', $data['position_code'])->first();
                 // Send mail
-                $to = config('MAIL_HR_TEAM');
+                $to = config('app.MAIL_HR_TEAM');
                 Mail::to($to)->send(new CareerSubmissionMail($data, $file_path));
             });
 
@@ -317,7 +317,7 @@ class WestecController extends Controller
         ]);
 
         try {
-            $to = config('MAIL_SALES_TEAM');
+            $to = config('app.MAIL_SALES_TEAM');
             Mail::to($to)->send(new SupportRequestMail($data));
 
             // If no exception was thrown, consider it sent
@@ -369,7 +369,7 @@ class WestecController extends Controller
 
                 // dd($data);
 
-                $to = config('MAIL_SALES_TEAM');
+                $to = config('app.MAIL_SALES_TEAM');
                 Mail::to($to)->send(new ProjectInquiryMail($data));
             });
 
