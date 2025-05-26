@@ -318,7 +318,7 @@ class WestecController extends Controller
 
         try {
             $to = config('MAIL_SALES_TEAM');
-            Mail::to(env($to))->send(new SupportRequestMail($data));
+            Mail::to($to)->send(new SupportRequestMail($data));
 
             // If no exception was thrown, consider it sent
             Message::create($data);
