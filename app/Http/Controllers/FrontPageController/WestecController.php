@@ -327,7 +327,7 @@ class WestecController extends Controller
         } catch (\Exception $e) {
             // Log the error for debugging
             // \Log::error('Support request failed: ' . $e->getMessage());
-
+            dd($e);
             return redirect()->back()->with('error', 'Failed to submit. Please contact support directly.');
         }
     }
@@ -376,7 +376,7 @@ class WestecController extends Controller
             return redirect()->back()->with('success', 'Submit Successfully!');
         } catch (\Exception $e) {
             // Log::error('Product inquiry failed: ' . $e->getMessage());
-
+            dd($e);
             return redirect()->back()->with('error', 'Failed to submit. Please contact support directly.');
         }
     }
