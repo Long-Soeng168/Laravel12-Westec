@@ -11,6 +11,7 @@ import { toast } from 'sonner';
 const CareerForm = ({ item }: { item: any }) => {
     const { t, currentLocale } = useTranslation();
     const [fileKey, setFileKey] = useState(Date.now());
+    const [successMessage, setSuccessMessage] = useState('');
 
     const { data, setData, post, processing, progress, errors, reset } = useForm({
         name: '',
@@ -30,6 +31,7 @@ const CareerForm = ({ item }: { item: any }) => {
         post('/submit_career', {
             onSuccess: (page) => {
                 if (page.props.flash?.success) {
+                    setSuccessMessage(page.props.flash.success);
                     toast.success('Success', { description: page.props.flash.success });
                     reset();
                     setFileKey(Date.now());
@@ -112,6 +114,7 @@ const CareerForm = ({ item }: { item: any }) => {
             <input key={fileKey} id="cv-upload" type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange} className="hidden" />
             {data.cv && <span className="text-sm">{data.cv.name}</span>}
             {errors.cv && <p className="text-red-500">{errors.cv}</p>}
+            {successMessage && <p className="text-green-500">{successMessage}</p>}
 
             {progress && <ProgressWithValue value={progress.percentage} position="start" />}
         </form>

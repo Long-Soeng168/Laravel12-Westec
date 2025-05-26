@@ -4,11 +4,13 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import useTranslation from '@/hooks/use-translation';
 import { useForm, usePage } from '@inertiajs/react';
+import { useState } from 'react';
 import { toast } from 'sonner';
 
 const ProjectInquiryForm = () => {
     const { t, currentLocale } = useTranslation();
     const { solutions } = usePage().props;
+    const [successMessage, setSuccessMessage] = useState('');
 
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
@@ -35,6 +37,7 @@ const ProjectInquiryForm = () => {
         post('/submit_product_inquiry', {
             onSuccess: (page) => {
                 if (page.props.flash?.success) {
+                    setSuccessMessage(page.props.flash.success);
                     toast.success('Success', {
                         description: page.props.flash.success,
                     });
@@ -150,7 +153,7 @@ const ProjectInquiryForm = () => {
                     </div>
 
                     <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
-                        <div className="w-full flex items-center gap-2 max-w-full lg:w-lg">
+                        <div className="flex w-full max-w-full items-center gap-2 lg:w-lg">
                             <Label className="2xl:text-lg" htmlFor="other">
                                 {t('Others')}
                             </Label>
@@ -163,7 +166,7 @@ const ProjectInquiryForm = () => {
                             />
                             {errors.other && <p className="mt-1 text-sm text-red-500">{errors.other}</p>}
                         </div>
-                        <div className="mt-8">
+                        <div className="mt-8 flex flex-col items-end gap-2">
                             <Button
                                 type="submit"
                                 variant="secondary"
@@ -172,6 +175,7 @@ const ProjectInquiryForm = () => {
                             >
                                 {processing ? t('Submitting...') : t('Submit')}
                             </Button>
+                            {successMessage && <p className="text-green-500">{successMessage}</p>}
                         </div>
                     </div>
                 </div>

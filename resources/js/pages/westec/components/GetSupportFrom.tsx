@@ -4,11 +4,12 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import useTranslation from '@/hooks/use-translation';
 import { useForm } from '@inertiajs/react';
+import { useState } from 'react';
 import { toast } from 'sonner';
 
 const GetSupportForm = () => {
     const { t } = useTranslation();
-
+    const [successMessage, setSuccessMessage] = useState('');
     const { data, setData, post, processing, progress, errors, reset } = useForm({
         name: '',
         email: '',
@@ -23,6 +24,7 @@ const GetSupportForm = () => {
             post('/submit_support_request', {
                 onSuccess: (page) => {
                     if (page.props.flash?.success) {
+                        setSuccessMessage(page.props.flash.success);
                         toast.success('Success', {
                             description: page.props.flash.success,
                         });
@@ -122,7 +124,7 @@ const GetSupportForm = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-8 flex flex-wrap justify-end gap-4">
+                <div className="mt-8 flex flex-col items-end  gap-2">
                     <Button
                         type="submit"
                         variant="secondary"
@@ -131,6 +133,7 @@ const GetSupportForm = () => {
                     >
                         {processing ? t('Submitting...') : t('Submit')}
                     </Button>
+                    {successMessage && <p className="text-green-500">{successMessage}</p>}
                 </div>
 
                 {progress && <div className="mt-4 text-white">{progress.percentage}%</div>}
