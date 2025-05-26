@@ -14,6 +14,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'MAIL_HR_TEAM' => env('MAIL_HR_TEAM'),
+    'MAIL_SALES_TEAM' => env('MAIL_SALES_TEAM'),
     'can_switch_language' => env('CAN_SWITCH_LANGUAGE', true),
 
     /*
