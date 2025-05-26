@@ -1,5 +1,6 @@
 import MyFooter from '@/components/my-footer';
 import { MyNavbar } from '@/components/my-navbar';
+import { Toaster } from '@/components/ui/sonner';
 import { ReactNode } from 'react';
 
 interface LayoutProps {
@@ -8,7 +9,7 @@ interface LayoutProps {
 
 const WestecLayout = ({ children }: LayoutProps) => {
     return (
-        <div className='bg-white'>
+        <div className="bg-white">
             <header className="sticky top-0 z-50">
                 <MyNavbar />
             </header>
@@ -16,6 +17,7 @@ const WestecLayout = ({ children }: LayoutProps) => {
             <main className="mx-auto min-h-screen max-w-[2000px]">{children}</main>
 
             <MyFooter />
+            <Toaster />
         </div>
     );
 };

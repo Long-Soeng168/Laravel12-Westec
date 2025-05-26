@@ -66,6 +66,16 @@ const MyTableData = () => {
                                 </span>
                             </TableHead>
                             <TableHead> {t('Total Inquiry Solutions')}</TableHead>
+                            <TableHead onClick={() => handleSort('other')}>
+                                <span className="flex cursor-pointer items-center">
+                                    <ArrowUpDown size={16} /> {t('Other')}
+                                </span>
+                            </TableHead>
+                            <TableHead onClick={() => handleSort('created_at')}>
+                                <span className="flex cursor-pointer items-center">
+                                    <ArrowUpDown size={16} /> {t('Created at')}
+                                </span>
+                            </TableHead>
                             {/* <TableHead onClick={() => handleSort('message')}>
                                 <span className="flex cursor-pointer items-center">
                                     <ArrowUpDown size={16} /> {t('Message')}
@@ -90,6 +100,16 @@ const MyTableData = () => {
                                 <TableCell>{item.phone || '---'}</TableCell>
                                 <TableCell>{item.email || '---'}</TableCell>
                                 <TableCell>{item.inquiry_solutions?.length || '---'}</TableCell>
+                                <TableCell>{item.other || '---'}</TableCell>
+                                <TableCell>
+                                    {item.created_at
+                                        ? new Date(item.created_at).toLocaleDateString('en-UK', {
+                                              year: 'numeric',
+                                              month: 'long',
+                                              day: 'numeric',
+                                          })
+                                        : '---'}
+                                </TableCell>
                                 {/* <TableCell>{item.message || '---'}</TableCell> */}
                             </TableRow>
                         ))}

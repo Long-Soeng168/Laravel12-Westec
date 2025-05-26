@@ -1,9 +1,6 @@
-import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import useTranslation from '@/hooks/use-translation';
-import { PaperclipIcon } from 'lucide-react';
+import CareerForm from './CareerForm';
 import Headline from './headline';
 
 const CareerList = ({ careers }: { careers: any[] }) => {
@@ -22,7 +19,7 @@ const CareerList = ({ careers }: { careers: any[] }) => {
                     <img className="aspect-[1/1] w-full object-cover" src={`/assets/images/careers/${item.image}`} alt="Sunset in the mountains" />
                 </a>
 
-                <div className="p-4 flex flex-col justify-between h-full">
+                <div className="flex h-full flex-col justify-between p-4">
                     <div className="mb-8">
                         <a href="#" className="mb-2 inline-block text-lg font-bold text-white transition duration-500 ease-in-out 2xl:text-xl">
                             {currentLocale == 'kh' ? item?.name_kh : item?.name}
@@ -96,54 +93,7 @@ const CareerList = ({ careers }: { careers: any[] }) => {
                                                 ></div>
                                             </div>
                                         </div>
-                                        <div className="w-full space-y-4 lg:w-md">
-                                            <div className="w-full max-w-full">
-                                                <Label htmlFor="name">{t('Name')}</Label>
-                                                <Input
-                                                    id="name"
-                                                    type="name"
-                                                    placeholder={t('Name')}
-                                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none"
-                                                />
-                                            </div>
-                                            <div className="w-full max-w-full">
-                                                <Label htmlFor="email">{t('Career Position')}</Label>
-                                                <Input
-                                                    id="position"
-                                                    type="position"
-                                                    placeholder={t("Position")}
-                                                    disabled
-                                                    value={currentLocale == 'kh' ? item?.position?.name_kh : item?.position?.name}
-                                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none disabled:opacity-80"
-                                                />
-                                            </div>
-                                            <div className="w-full max-w-full">
-                                                <Label htmlFor="email">{t('Email')}</Label>
-                                                <Input
-                                                    id="email"
-                                                    type="email"
-                                                    placeholder={t('Email')}
-                                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none"
-                                                />
-                                            </div>
-                                            <div className="w-full max-w-full">
-                                                <Label htmlFor="email">{t('Phone number')}</Label>
-                                                <Input
-                                                    id="phone"
-                                                    type="phone"
-                                                    placeholder={t('Phone')}
-                                                    className="w-full max-w-full rounded-none border-none bg-white text-black shadow-none"
-                                                />
-                                            </div>
-                                            <div className="flex w-full max-w-full justify-end gap-4">
-                                                <Button variant="secondary" className="rounded-none">
-                                                    <PaperclipIcon /> {t('Attach CV')}
-                                                </Button>
-                                                <Button variant="secondary" className="rounded-none">
-                                                    {t('Apply')}
-                                                </Button>
-                                            </div>
-                                        </div>
+                                        <CareerForm item={item} />
                                     </div>
                                 </div>
                             </DialogContent>

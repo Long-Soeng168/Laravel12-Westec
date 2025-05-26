@@ -99,7 +99,7 @@ const MyTableData = () => {
 
                                 <TableCell>
                                     <MyTooltipButton variant="ghost" title="CV File">
-                                        <a href={`/assets/files/career_submits/${item.cv_file}`}>
+                                        <a href={`/assets/files/careers/${item.cv_file}`}>
                                             <PaperclipIcon />
                                         </a>
                                     </MyTooltipButton>

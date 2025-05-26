@@ -75,6 +75,11 @@ const MyTableData = () => {
                                     <ArrowUpDown size={16} /> {t('Message')}
                                 </span>
                             </TableHead>
+                            <TableHead onClick={() => handleSort('created_at')}>
+                                <span className="flex cursor-pointer items-center">
+                                    <ArrowUpDown size={16} /> {t('Created at')}
+                                </span>
+                            </TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -95,6 +100,15 @@ const MyTableData = () => {
                                 <TableCell>{item.email || '---'}</TableCell>
                                 <TableCell>{item.subject || '---'}</TableCell>
                                 <TableCell>{item.message || '---'}</TableCell>
+                                <TableCell>
+                                    {item.created_at
+                                        ? new Date(item.created_at).toLocaleDateString('en-UK', {
+                                              year: 'numeric',
+                                              month: 'long',
+                                              day: 'numeric',
+                                          })
+                                        : '---'}
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
