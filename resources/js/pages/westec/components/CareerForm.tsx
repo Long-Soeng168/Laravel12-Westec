@@ -5,11 +5,12 @@ import { ProgressWithValue } from '@/components/ui/progress-with-value';
 import useTranslation from '@/hooks/use-translation';
 import { useForm } from '@inertiajs/react';
 import { PaperclipIcon } from 'lucide-react';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { toast } from 'sonner';
 
 const CareerForm = ({ item }: { item: any }) => {
     const { t, currentLocale } = useTranslation();
+    const [fileKey, setFileKey] = useState(Date.now());
 
     const { data, setData, post, processing, progress, errors, reset } = useForm({
         name: '',
@@ -31,6 +32,7 @@ const CareerForm = ({ item }: { item: any }) => {
                 if (page.props.flash?.success) {
                     toast.success('Success', { description: page.props.flash.success });
                     reset();
+                    setFileKey(Date.now());
                 }
                 if (page.props.flash?.error) {
                     toast.error('Error', { description: page.props.flash.error });
@@ -95,7 +97,7 @@ const CareerForm = ({ item }: { item: any }) => {
                 {errors.phone && <p className="text-red-500">{errors.phone}</p>}
             </div>
 
-            <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex flex-wrap items-center justify-between gap-4">
                 <Button asChild variant="secondary" className="rounded-none">
                     <label htmlFor="cv-upload" className="flex cursor-pointer items-center gap-2">
                         <PaperclipIcon /> {t('Attach CV')}
@@ -107,7 +109,7 @@ const CareerForm = ({ item }: { item: any }) => {
                     </Button>
                 </div>
             </div>
-            <input id="cv-upload" type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange} className="hidden" />
+            <input key={fileKey} id="cv-upload" type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange} className="hidden" />
             {data.cv && <span className="text-sm">{data.cv.name}</span>}
             {errors.cv && <p className="text-red-500">{errors.cv}</p>}
 
