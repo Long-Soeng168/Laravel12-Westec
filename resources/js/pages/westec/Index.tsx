@@ -59,7 +59,7 @@ const Index = () => {
 
             <div className="mb-40" id="clients">
                 <Headline title={t('Our Clientele')} />
-                <MyPartner items={clients_detail} />
+                <MyPartner imageHeight='h-[70px]' items={clients_detail} />
             </div>
         </WestecLayout>
     );

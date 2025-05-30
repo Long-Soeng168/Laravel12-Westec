@@ -1,10 +1,10 @@
 import { InfiniteMovingCards } from '@/pages/westec/components/ui/infinite-moving-cards';
 
-export function MyPartner({ items }: { items: any }) {
+export function MyPartner({ items, imageHeight }: { items: any; imageHeight?: string }) {
     return (
         <div>
             <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-md antialiased">
-                <InfiniteMovingCards items={items} direction="left" speed="normal" />
+                <InfiniteMovingCards imageHeight={imageHeight} items={items} direction="left" speed="normal" />
             </div>
         </div>
     );

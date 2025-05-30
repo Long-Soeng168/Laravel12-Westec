@@ -8,6 +8,7 @@ export const InfiniteMovingCards = ({
     speed = 'fast',
     pauseOnHover = true,
     className,
+    imageHeight = 'h-[40px]',
 }: {
     items: {
         quote: string;
@@ -18,6 +19,7 @@ export const InfiniteMovingCards = ({
     speed?: 'fast' | 'normal' | 'slow';
     pauseOnHover?: boolean;
     className?: string;
+    imageHeight?: string;
 }) => {
     const containerRef = React.useRef<HTMLDivElement>(null);
     const scrollerRef = React.useRef<HTMLUListElement>(null);
@@ -133,7 +135,7 @@ export const InfiniteMovingCards = ({
                 )}
             >
                 {items.map((item, idx) => (
-                    <li className="h-[65px] object-contain">
+                    <li className={`${imageHeight} object-contain`}>
                         <Link href={item.link || '#'}>
                             <img src={`/assets/images/links/${item.image}`} className="h-full w-full object-contain" />
                         </Link>

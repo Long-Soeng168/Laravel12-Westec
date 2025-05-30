@@ -1,4 +1,5 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import useTranslation from '@/hooks/use-translation';
 import Headline from './headline';
 
@@ -6,8 +7,20 @@ const EventList = ({ items }: { items: any }) => {
     const { t, currentLocale } = useTranslation();
     return (
         <div className="mx-auto max-w-[4000px]">
-            <Headline title={t('Events & Promotions')} />
-            {items?.length > 0 && <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">{items?.map((item) => BlogCard(item))}</div>}
+            <Headline title={t('Events & Promotions')} className="text-center" />
+            {items?.length > 0 && (
+                <ScrollArea className="w-full overflow-x-auto">
+                    <div className="flex flex-nowrap gap-4">
+                        {items?.map((item) => (
+                            <div key={item.id} className="min-w-[300px] sm:min-w-[400px] md:min-w-[350px]">
+                                {BlogCard(item)}
+                            </div>
+                        ))}
+                    </div>
+                    <ScrollBar orientation="horizontal" />
+                </ScrollArea>
+            )}
+            {/* {items?.length > 0 && <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">{items?.map((item) => BlogCard(item))}</div>} */}
         </div>
     );
 

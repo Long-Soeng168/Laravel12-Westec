@@ -7,7 +7,7 @@ const MyFooter = () => {
     return (
         <>
             <footer className="font-proxima-nova-regular mt-10 pb-20 text-black">
-                <div className="mx-auto grid max-w-[2000px] grid-cols-1 gap-10 px-4 lg:grid-cols-6 lg:px-16">
+                <div className="mx-auto grid max-w-[2000px] grid-cols-1 gap-y-10 lg:gap-x-10 px-4 lg:grid-cols-6 lg:px-16">
                     {/* Contact Section */}
                     <div className="col-span-2 grid w-full grid-cols-1">
                         <img src={`/assets/images/application_info/${application_info.image}`} alt="" className="mb-8 w-48" />
@@ -21,20 +21,20 @@ const MyFooter = () => {
 
                             <div>
                                 <div className="flex">
-                                    <p className="w-48 whitespace-nowrap lg:w-56">{t('Mobile Phone')}</p>:
+                                    <p className="whitespace-nowrap w-28">{t('Mobile Phone')}</p>:
                                     <p className="ml-2 whitespace-pre-line">{application_info?.phone}</p>
                                 </div>
                                 <div className="flex">
-                                    <p className="w-48 whitespace-nowrap lg:w-56">{t('Landline Phone')}</p>:
+                                    <p className="whitespace-nowrap w-28">{t('Landline Phone')}</p>:
                                     <p className="ml-2 whitespace-pre-line">{application_info?.landline_phone}</p>
                                 </div>
                             </div>
 
                             <div className="flex">
-                                <p className="w-48 whitespace-nowrap lg:w-56">{t('Email')}</p>:<p className="ml-2">{application_info?.email}</p>
+                                <p className="whitespace-nowrap w-28">{t('Email')}</p>:<p className="ml-2">{application_info?.email}</p>
                             </div>
                             <div className="flex">
-                                <p className="w-48 whitespace-nowrap lg:w-56">{t('Office Hours')}</p>:
+                                <p className="whitespace-nowrap w-28">{t('Office Hours')}</p>:
                                 <div>
                                     <p className="ml-2">
                                         {currentLocale == 'kh' ? application_info?.working_hours_kh : application_info?.working_hours}
@@ -53,7 +53,7 @@ const MyFooter = () => {
                             {/* About Us */}
                             {pages_menus?.abouts && (
                                 <div className="flex-1">
-                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-lg">
+                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 whitespace-nowrap py-1 text-center text-base text-white 2xl:text-lg">
                                         <Link href={`/about`} prefetch>
                                             {currentLocale == 'kh' ? pages_menus?.abouts?.title_kh : pages_menus?.abouts?.title}
                                         </Link>
@@ -73,7 +73,7 @@ const MyFooter = () => {
                             )}
                             {pages_menus?.solutions && (
                                 <div className="flex-1">
-                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-lg">
+                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 whitespace-nowrap py-1 text-center text-base text-white 2xl:text-lg">
                                         <Link href={`/solutions`} prefetch>
                                             {currentLocale == 'kh' ? pages_menus?.solutions?.title_kh : pages_menus?.solutions?.title}
                                         </Link>
@@ -92,7 +92,7 @@ const MyFooter = () => {
                                 </div>
                             )}
                             <div className="flex-1">
-                                <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-lg">
+                                <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 whitespace-nowrap py-1 text-center text-base text-white 2xl:text-lg">
                                     <Link href={`#`}>Featured Solutions</Link>
                                 </h3>
                                 <ul className="mt-6 list-disc space-y-1 pl-3 marker:text-gray-400 2xl:text-xl">
@@ -106,7 +106,7 @@ const MyFooter = () => {
                             </div>
                             {pages_menus?.case_studies && (
                                 <div className="flex-1">
-                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 py-1 text-center text-base text-white 2xl:text-lg">
+                                    <h3 className="bg-true-primary font-proxima-nova-regular inline-block w-full px-6 whitespace-nowrap py-1 text-center text-base text-white 2xl:text-lg">
                                         <Link href={`/case_studies`} prefetch>
                                             {currentLocale == 'kh' ? pages_menus?.case_studies?.title_kh : pages_menus?.case_studies?.title}
                                         </Link>
@@ -129,7 +129,7 @@ const MyFooter = () => {
                         {/* Social & Chat Sections */}
                         <div className="mt-22 grid grid-cols-2 gap-6 text-sm text-gray-500 xl:grid-cols-4">
                             {/* Follow Us */}
-                            <div className="w-full sm:flex-1 col-span-2">
+                            <div className="col-span-2 w-full sm:flex-1">
                                 <h3 className="bg-true-primary font-proxima-nova-regular inline-block px-6 py-1 text-base text-white 2xl:text-lg">
                                     {t('Follow Us!')}
                                 </h3>
@@ -139,14 +139,14 @@ const MyFooter = () => {
                                             <img
                                                 src={`/assets/images/links/${item.image}`}
                                                 alt=""
-                                                className="background size-10 shrink-0 object-contain p-1.5 transition-all duration-500 hover:scale-125 2xl:size-14"
+                                                className="background size-8 lg:size-10 shrink-0 object-contain p-1.5 transition-all duration-500 hover:scale-125"
                                             />
                                         </a>
                                     ))}
                                 </div>
                             </div>
                             {/* Chat With Us */}
-                            <div className="flex-1 col-span-2">
+                            <div className="col-span-2 flex-1">
                                 <h3 className="bg-true-primary font-proxima-nova-regular inline-block px-6 py-1 text-base text-white 2xl:text-lg">
                                     {t('Chat With Us!')}
                                 </h3>
@@ -156,7 +156,7 @@ const MyFooter = () => {
                                             <img
                                                 src={`/assets/images/links/${item.image}`}
                                                 alt=""
-                                                className="background size-10 object-contain p-1.5 transition-all duration-500 hover:scale-125 2xl:size-14"
+                                                className="background size-8 lg:size-10 object-contain p-1.5 transition-all duration-500 hover:scale-125"
                                             />
                                         </a>
                                     ))}

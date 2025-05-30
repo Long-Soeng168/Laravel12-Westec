@@ -11,7 +11,7 @@ const WhyChooseUsCard = ({ item, i }: { item: any; i: number }) => {
     };
 
     return (
-        <div className="card perspective font-proxima-nova-regular h-full border lg:border-none" onClick={handleCardClick}>
+        <div className="card perspective font-proxima-nova-regular h-full border lg:border-none" onMouseEnter={handleCardClick} onClick={handleCardClick}>
             <div className={`card__content relative h-full cursor-pointer py-4 transition-transform duration-700 ${isFlipped ? 'rotate-y-180' : ''}`}>
                 {/* Front */}
                 <div className="card__front flex h-full items-center gap-8 px-12 py-4 text-start text-white backface-hidden">

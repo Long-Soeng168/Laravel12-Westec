@@ -28,7 +28,7 @@ export function OurJourney({ items }: { items: any[] }) {
                                 </p>
                                 <div className="flex flex-1 flex-col">
                                     <span className="flex justify-center py-2">
-                                        <span className="size-28 shrink-0 xl:size-32">
+                                        <span className="size-20 shrink-0">
                                             <img
                                                 src={`/assets/images/pages/${item.images[0]?.image}`}
                                                 alt=""

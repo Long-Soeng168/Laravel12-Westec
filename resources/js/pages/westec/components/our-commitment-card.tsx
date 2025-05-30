@@ -19,7 +19,7 @@ const OurCommitmentCard = ({ item, i }: { item: any; i: number }) => {
                 {/* Front */}
                 <div className="card__front flex items-center gap-8 p-8 text-start text-white backface-hidden">
                     <div className="flex w-full items-center justify-start gap-8">
-                        <span className="size-20 xl:size-32 shrink-0">
+                        <span className="size-20 xl:size-28 shrink-0">
                             <img src={`/assets/images/pages/${item.images[0]?.image}`} alt="" className="h-full w-full object-contain" />
                         </span>
                         <div>
