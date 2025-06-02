@@ -2,7 +2,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { FileInput, FileUploader, FileUploaderContent, FileUploaderItem } from '@/components/ui/file-upload';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { ProgressWithValue } from '@/components/ui/progress-with-value';
 import useTranslation from '@/hooks/use-translation';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -170,7 +170,7 @@ export function AddFiles({ open, setOpen }: { open: boolean; setOpen: React.Disp
                                                 <div className="flex w-full flex-col items-center justify-center p-8">
                                                     <CloudUpload className="h-10 w-10 text-gray-500" />
                                                     <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
-                                                         <span className="font-semibold">{t('Click to upload')}</span>
+                                                        <span className="font-semibold">{t('Click to upload')}</span>
                                                         &nbsp; {t('or drag and drop')}
                                                     </p>
                                                     <p className="text-center text-xs text-gray-500 dark:text-gray-400">
@@ -191,12 +191,13 @@ export function AddFiles({ open, setOpen }: { open: boolean; setOpen: React.Disp
                                             </FileUploaderContent>
                                         </FileUploader>
                                     </FormControl>
+                                    <FormDescription>Max File Size 2MB</FormDescription>
                                     <FormMessage>{errors.files && <div>{errors.files}</div>}</FormMessage>
                                 </FormItem>
                             )}
                         />
                         {progress && <ProgressWithValue value={progress.percentage} position="start" />}
-                        <Button disabled={processing} type="submit">
+                        <Button disabled={processing} type="button" onClick={() => onSubmit(form.getValues())}>
                             {processing && (
                                 <span className="size-6 animate-spin">
                                     <Loader />

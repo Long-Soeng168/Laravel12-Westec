@@ -61,7 +61,6 @@ export function MyFileManagerDialog({
                 <DialogTrigger asChild>
                     <button
                         className="text-true-primary hover:bg-true-primary border-l-true-primary max-h-16 cursor-pointer border-l px-2 py-[11px] transition-all duration-300 hover:text-white"
-                        variant="outline"
                         onClick={() => setIsOpenFileManager(true)}
                     >
                         <span className="flex items-center gap-2">
@@ -103,11 +102,11 @@ export function MyFileManagerDialog({
                                             />
                                         )}
                                         <span className="h-6 rounded-full border-[1px] bg-gray-400"></span>
-                                        <MyTooltipButton title={t("Refresh")} variant={`outline`} size={`icon`} onClick={() => handleRefresh()}>
+                                        <MyTooltipButton title={t('Refresh')} variant={`outline`} size={`icon`} onClick={() => handleRefresh()}>
                                             <RotateCw className="stroke-foreground" />
                                         </MyTooltipButton>
                                         <MyTooltipButton
-                                            title={t("Close")}
+                                            title={t('Close')}
                                             variant={`outline`}
                                             size={`icon`}
                                             onClick={() => {

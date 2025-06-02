@@ -2,6 +2,7 @@ import MyNoData from '@/components/my-no-data';
 import { MyTooltipButton } from '@/components/my-tooltip-button';
 import usePermission from '@/hooks/use-permission';
 import { cn } from '@/lib/utils';
+import { usePage } from '@inertiajs/react';
 import { DownloadCloudIcon, FileIcon, ViewIcon } from 'lucide-react';
 import { useState } from 'react';
 import { useFileManager } from '../hooks/FileManagerContext';
@@ -98,6 +99,7 @@ const FileTableData = ({ handleInsertMedia }: { handleInsertMedia?: (type: 'imag
     const [selectedImage, setSelectedImage] = useState('');
     const [isOpenViewImages, setIsOpenViewImages] = useState(false);
     const { fileTableData, setIsOpenFileManager } = useFileManager();
+    const { CKEDITOR_USE_FILE_FULL_PATH } = usePage().props;
     return (
         <div className="overflow-y-auto p-4 pt-2">
             <ViewImage selectedImage={selectedImage} open={isOpenViewImages} setOpen={setIsOpenViewImages} />
@@ -113,7 +115,10 @@ const FileTableData = ({ handleInsertMedia }: { handleInsertMedia?: (type: 'imag
                                 <button
                                     type="button"
                                     onClick={(e: React.MouseEvent) => {
-                                        handleInsertMedia('image', `${window.location.origin}/${item.path}/${item.name}`);
+                                        handleInsertMedia(
+                                            'image',
+                                            `${CKEDITOR_USE_FILE_FULL_PATH ? window.location.origin : ''}/${item.path}/${item.name}`,
+                                        );
                                         setIsOpenFileManager(false);
                                     }}
                                     // onClick={() => {
@@ -137,7 +142,11 @@ const FileTableData = ({ handleInsertMedia }: { handleInsertMedia?: (type: 'imag
                                             <button
                                                 type="button"
                                                 onClick={() => {
-                                                    handleInsertMedia('file', `${window.location.origin}/${item.path}/${item.name}`, item.name);
+                                                    handleInsertMedia(
+                                                        'file',
+                                                        `${CKEDITOR_USE_FILE_FULL_PATH ? window.location.origin : ''}/${item.path}/${item.name}`,
+                                                        item.name,
+                                                    );
                                                     setIsOpenFileManager(false);
                                                 }}
                                             >
@@ -181,7 +190,7 @@ const FileTableData = ({ handleInsertMedia }: { handleInsertMedia?: (type: 'imag
                                         >
                                             {item.mime_type.startsWith('image/') ? <ViewIcon /> : <DownloadCloudIcon />}
                                         </MyTooltipButton>
-                                        <CopyFileUrl url={`${window.location.origin}/${item.path}/${item.name}`} />
+                                        <CopyFileUrl url={`${CKEDITOR_USE_FILE_FULL_PATH ? window.location.origin : ''}/${item.path}/${item.name}`} />
                                     </>
                                 )}
                             </div>

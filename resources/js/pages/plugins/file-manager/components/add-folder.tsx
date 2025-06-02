@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { ProgressWithValue } from '@/components/ui/progress-with-value';
+import useTranslation from '@/hooks/use-translation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm as inertiaUseForm } from '@inertiajs/react';
 import { FolderIcon, Loader } from 'lucide-react';
@@ -12,13 +13,12 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import * as z from 'zod';
 import { useFileManager } from '../hooks/FileManagerContext';
-import useTranslation from '@/hooks/use-translation';
 
 const formSchema = z.object({
     name: z.string().min(1).max(255),
 });
 export function AddFolder({ open, setOpen }: { open: boolean; setOpen: React.Dispatch<React.SetStateAction<boolean>> }) {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
     });
@@ -83,7 +83,7 @@ export function AddFolder({ open, setOpen }: { open: boolean; setOpen: React.Dis
             </TooltipProvider> */}
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>{('Create Folder')}</DialogTitle>
+                    <DialogTitle>{'Create Folder'}</DialogTitle>
                     <DialogDescription className="flex">
                         <span className="mr-1 font-semibold whitespace-nowrap">Path : </span>
                         <Breadcrumb>
@@ -121,7 +121,7 @@ export function AddFolder({ open, setOpen }: { open: boolean; setOpen: React.Dis
                                     name="name"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel className='flex items-center gap-1'>
+                                            <FormLabel className="flex items-center gap-1">
                                                 <FolderIcon size={18} /> Name
                                             </FormLabel>
                                             <FormControl>
@@ -133,13 +133,13 @@ export function AddFolder({ open, setOpen }: { open: boolean; setOpen: React.Dis
                                 />
 
                                 {progress && <ProgressWithValue value={progress.percentage} position="start" />}
-                                <Button disabled={processing} type="submit">
+                                <Button disabled={processing} type="button" onClick={() => onSubmit(form.getValues())}>
                                     {processing && (
                                         <span className="size-6 animate-spin">
                                             <Loader />
                                         </span>
                                     )}
-                                   {processing ? t('Submitting') : t('Submit')}
+                                    {processing ? t('Submitting') : t('Submit')}
                                 </Button>
                             </form>
                         </Form>
