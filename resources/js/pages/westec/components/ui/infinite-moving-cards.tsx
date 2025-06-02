@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils';
-import { Link } from '@inertiajs/react';
 import React, { useEffect, useState } from 'react';
 
 export const InfiniteMovingCards = ({
@@ -136,9 +135,9 @@ export const InfiniteMovingCards = ({
             >
                 {items.map((item, idx) => (
                     <li className={`${imageHeight} object-contain`}>
-                        <Link href={item.link || '#'}>
-                            <img src={`/assets/images/links/${item.image}`} className="h-full w-full object-contain" />
-                        </Link>
+                        {/* <Link href={item.link || '#'}> */}
+                        <img src={`/assets/images/links/${item.image}`} className="h-full w-full object-contain" />
+                        {/* </Link> */}
                     </li>
                 ))}
             </ul>

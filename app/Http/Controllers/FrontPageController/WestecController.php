@@ -245,6 +245,7 @@ class WestecController extends Controller
             $query->with('children', 'images')->where('status', 'active')->orderBy('order_index');
         }])->where('code', 'SOLUTION')->where('status', 'active')->first();
         $contact_heading_1 = Heading::where('status', 'active')->where('code', 'CONTACT-HEADING-1')->first();
+        $project_inquiry_heading_1 = Heading::where('status', 'active')->where('code', 'PROJECT-INQUIRY-HEADING-1')->first();
 
         $banners = Banner::where('position_code', 'CONTACT_PAGE')->where('status', 'active')->orderBy('order_index')->first();
 
@@ -252,6 +253,7 @@ class WestecController extends Controller
         return Inertia::render('westec/Contact', [
             'solutions' => $solutions,
             'contact_heading_1' => $contact_heading_1,
+            'project_inquiry_heading_1' => $project_inquiry_heading_1,
             'banners' => $banners,
         ]);
     }

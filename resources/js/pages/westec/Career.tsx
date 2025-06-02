@@ -14,8 +14,12 @@ const Career = () => {
             {team_categories?.length > 0 &&
                 team_categories.map((item) => (
                     <>
-                        <Headline title={t("Employee Highlights")} />
-                        {item?.teams?.length > 0 && <MySlideCareer teams={item?.teams} />}
+                        {item?.teams?.length > 0 && (
+                            <>
+                                <Headline title={t('Employee Highlights')} />
+                                <MySlideCareer teams={item?.teams} />
+                            </>
+                        )}
                     </>
                 ))}
 

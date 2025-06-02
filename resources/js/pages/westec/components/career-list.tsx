@@ -1,3 +1,4 @@
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import useTranslation from '@/hooks/use-translation';
 import CareerForm from './CareerForm';
@@ -7,8 +8,36 @@ const CareerList = ({ careers }: { careers: any[] }) => {
     const { t, currentLocale } = useTranslation();
     return (
         <div className="mx-auto max-w-[4000px] bg-white">
-            <Headline title={t('Career')} />
-            {careers?.length > 0 && <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">{careers.map((item) => BlogCard(item))}</div>}
+            {careers?.length > 0 && (
+                <>
+                    <Headline title={t('Career')} />
+
+                    <Carousel>
+                        <CarouselContent className="m-0">
+                            {/* Map through the existing careers */}
+                            {careers.map((item) => (
+                                <CarouselItem className="p-0 sm:basis-1/2 lg:basis-1/4">{BlogCard(item)}</CarouselItem>
+                            ))}
+
+                            {/* Render "Coming Soon" placeholders for the remaining columns */}
+                            {Array.from({ length: Math.max(0, 4 - careers.length) }).map((_, index) => (
+                                <CarouselItem className="relative self-stretch border p-0 sm:basis-1/2 lg:basis-1/4">
+                                    <div
+                                        key={`coming-soon-${index}`}
+                                        className="absolute top-1/2 left-1/2 -translate-1/2 p-4 text-center text-2xl font-bold whitespace-nowrap text-gray-300"
+                                    >
+                                        {t('Coming Soon')}
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <div className={`my-8 flex items-center justify-center gap-8 ${careers?.length <= 4 && 'lg:hidden'}`}>
+                            <CarouselPrevious className="relative translate-0 border dark:bg-white" />
+                            <CarouselNext className="relative translate-0 border dark:bg-white" />
+                        </div>
+                    </Carousel>
+                </>
+            )}
         </div>
     );
 

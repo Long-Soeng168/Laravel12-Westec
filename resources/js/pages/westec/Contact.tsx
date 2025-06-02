@@ -7,7 +7,7 @@ import ProjectInquiryForm from './components/ProjectInquiryForm';
 import WestecLayout from './layout/layout';
 
 const Contact = () => {
-    const { application_info, contact_heading_1, banners } = usePage().props;
+    const { application_info, contact_heading_1, project_inquiry_heading_1, banners } = usePage().props;
     const { t, currentLocale } = useTranslation();
 
     return (
@@ -15,7 +15,14 @@ const Contact = () => {
             <section>
                 <img src={`/assets/images/banners/${banners?.image}`} alt="" />
             </section>
-            <Headline title={t('Project Inquiry?')} />
+            {project_inquiry_heading_1 && (
+                <Headline
+                    className="bg-true-primary text-white"
+                    title={currentLocale == 'kh' ? project_inquiry_heading_1?.title_kh : project_inquiry_heading_1?.title}
+                    subTitle={currentLocale == 'kh' ? project_inquiry_heading_1?.short_description_kh : project_inquiry_heading_1?.short_description}
+                />
+            )}
+
             <ProjectInquiryForm />
             {contact_heading_1 && (
                 <ContactSection

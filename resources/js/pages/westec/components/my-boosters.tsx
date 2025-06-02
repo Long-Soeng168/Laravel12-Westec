@@ -20,7 +20,7 @@ const MyBoosters = ({ solution_boosters }: { solution_boosters: any[] }) => {
 
     function section(item: any, index: number) {
         return (
-            <div className={`border-l-true-primary w-full ${index > 0 && 'md:border-l-1 lg:px-8'} px-2 pt-0 lg:pt-0`}>
+            <div className={`border-l-true-primary w-full ${index > 0 && 'md:border-l-1 lg:px-8'} pt-0 lg:pt-0`}>
                 <div className="flex flex-col gap-6">
                     {/* Section Header */}
                     <div className={`${index > 0 && 'mt-10 md:mt-0'}`}>

@@ -8,6 +8,8 @@ import * as React from 'react';
 export default function MySlideCareer({ teams }: { teams: any[] }) {
     const { t, currentLocale } = useTranslation();
 
+    const duplicatedTeams = [...teams, ...teams, ...teams, ...teams, ...teams];
+
     const [api, setApi] = React.useState<CarouselApi>();
     const [current, setCurrent] = React.useState(0);
     // console.log('current :', current);
@@ -25,7 +27,7 @@ export default function MySlideCareer({ teams }: { teams: any[] }) {
         <div className="mx-auto max-w-6xl 2xl:max-w-[80vw]">
             <Carousel setApi={setApi} className="w-full max-w-6xl 2xl:max-w-[80vw]" opts={{ loop: true }}>
                 <CarouselContent className="ml-0">
-                    {teams?.map((item, index) => (
+                    {duplicatedTeams?.map((item, index) => (
                         <CarouselItem key={index} className={cn('basis-[50%] pl-0 sm:basis-[33%]', {})}>
                             <Card
                                 className={cn('border-0 p-0 transition-transform duration-500', {
@@ -80,7 +82,7 @@ export default function MySlideCareer({ teams }: { teams: any[] }) {
                                                                         {currentLocale == 'kh' ? item?.name_kh : item?.name}
                                                                     </h1>
                                                                     <p
-                                                                     className='2xl:text-xl'
+                                                                        className="2xl:text-xl"
                                                                         dangerouslySetInnerHTML={{
                                                                             __html:
                                                                                 currentLocale == 'kh'

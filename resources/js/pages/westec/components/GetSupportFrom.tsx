@@ -128,7 +128,7 @@ const GetSupportForm = () => {
                     <Button
                         type="submit"
                         variant="secondary"
-                        className="text-true-primary h-full rounded-none bg-white 2xl:text-xl"
+                        className="text-true-primary h-9 rounded-none bg-white 2xl:text-lg"
                         disabled={processing}
                     >
                         {processing ? t('Submitting...') : t('Submit')}
