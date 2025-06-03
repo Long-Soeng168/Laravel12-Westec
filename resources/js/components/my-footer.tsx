@@ -135,7 +135,7 @@ const MyFooter = () => {
                                 </h3>
                                 <div className="mt-6 flex gap-2">
                                     {links_follow_us?.map((item, index) => (
-                                        <a key={item.id} href={item?.link}>
+                                        <a target='_blank' key={item.id} href={item?.link}>
                                             <img
                                                 src={`/assets/images/links/${item.image}`}
                                                 alt=""
@@ -152,7 +152,7 @@ const MyFooter = () => {
                                 </h3>
                                 <div className="mt-6 flex gap-2">
                                     {links_chat_with_us?.map((item, index) => (
-                                        <a key={item.id} href={item?.link}>
+                                        <a target='_blank' key={item.id} href={item?.link}>
                                             <img
                                                 src={`/assets/images/links/${item.image}`}
                                                 alt=""
