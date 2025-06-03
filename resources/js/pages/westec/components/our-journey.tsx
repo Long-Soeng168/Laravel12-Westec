@@ -63,7 +63,7 @@ export function OurJourney({ items }: { items: any[] }) {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <div className="mt-10 flex items-center justify-center gap-8">
+            <div className="mt-2 pb-20 flex items-center justify-center gap-8">
                 <CarouselPrevious className="relative translate-0 dark:bg-white border" />
                 <CarouselNext className="relative translate-0 dark:bg-white border" />
             </div>

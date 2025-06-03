@@ -21,20 +21,20 @@ const MyFooter = () => {
 
                             <div>
                                 <div className="flex">
-                                    <p className="whitespace-nowrap w-36">{t('Mobile Phone')}</p>:
+                                    <p className="whitespace-nowrap w-40">{t('Mobile Phone')}</p>:
                                     <p className="ml-2 whitespace-pre-line">{application_info?.phone}</p>
                                 </div>
                                 <div className="flex">
-                                    <p className="whitespace-nowrap w-36">{t('Landline Phone')}</p>:
+                                    <p className="whitespace-nowrap w-40">{t('Landline Phone')}</p>:
                                     <p className="ml-2 whitespace-pre-line">{application_info?.landline_phone}</p>
                                 </div>
                             </div>
 
                             <div className="flex">
-                                <p className="whitespace-nowrap w-36">{t('Email')}</p>:<p className="ml-2">{application_info?.email}</p>
+                                <p className="whitespace-nowrap w-40">{t('Email')}</p>:<p className="ml-2">{application_info?.email}</p>
                             </div>
                             <div className="flex">
-                                <p className="whitespace-nowrap w-36">{t('Office Hours')}</p>:
+                                <p className="whitespace-nowrap w-40">{t('Office Hours')}</p>:
                                 <div>
                                     <p className="ml-2">
                                         {currentLocale == 'kh' ? application_info?.working_hours_kh : application_info?.working_hours}

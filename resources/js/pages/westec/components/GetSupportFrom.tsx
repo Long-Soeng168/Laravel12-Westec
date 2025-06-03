@@ -118,7 +118,7 @@ const GetSupportForm = () => {
                                 value={data.message}
                                 onChange={(e) => setData('message', e.target.value)}
                                 placeholder={t('Your inquiry')}
-                                className="min-h-[120px] rounded-none border-none bg-white text-black 2xl:text-lg"
+                                className="min-h-[120px] rounded-none border-none bg-white text-black"
                             />
                             {errors.message && <p className="text-red-500">{errors.message}</p>}
                         </div>
