@@ -16,11 +16,11 @@ export function MyNavbar({ className }: { className?: string }) {
         <>
             <div className={cn('mx-auto max-w-[2000px]', className)}>
                 <div className="flex h-full items-center justify-between border-b bg-white px-4 py-4 lg:px-16 lg:py-8">
-                    <a href="/" className="w-50">
+                    <a href="/" className="w-50 mr-4 shrink">
                         <img src="/assets/westec/images/logo.png" />
                     </a>
                     <MyNavbarMobile />
-                    <div className="hidden xl:block">
+                    <div className="hidden xl:block shrink">
                         <Menu setActive={setActive}>
                             {pages_menus?.abouts && (
                                 <Link prefetch href={`/about`}>

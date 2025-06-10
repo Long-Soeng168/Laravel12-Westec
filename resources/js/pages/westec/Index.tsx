@@ -1,3 +1,4 @@
+import { MyClients } from '@/components/my-clients';
 import { MyPartner } from '@/components/my-partner';
 import MySlide from '@/components/my-slide';
 import useTranslation from '@/hooks/use-translation';
@@ -38,7 +39,9 @@ const Index = () => {
             {commercial_detail?.title && <FeatureSection item={commercial_detail} defaultDropDown={false} />}
             {it_solution_detail?.title && <FeatureSection item={it_solution_detail} defaultDropDown={false} />}
 
-            {contact_heading_2 && <ContactSection bg="bg-true-primary" title={currentLocale == 'kh' ? contact_heading_2?.title_kh : contact_heading_2?.title} />}
+            {contact_heading_2 && (
+                <ContactSection bg="bg-true-primary" title={currentLocale == 'kh' ? contact_heading_2?.title_kh : contact_heading_2?.title} />
+            )}
 
             <MyBoosters solution_boosters={solution_boosters} />
             <div id="partners"></div>
@@ -58,8 +61,8 @@ const Index = () => {
             </div>
 
             <div className="mb-40" id="clients">
-                <Headline title={t('Our Clientele')} />
-                <MyPartner imageHeight='h-[60px]' items={clients_detail} />
+                <Headline className="pb-0" title={t('Our Clientele')} />
+                <MyClients imageHeight="h-[90px]" items={clients_detail} />
             </div>
         </WestecLayout>
     );

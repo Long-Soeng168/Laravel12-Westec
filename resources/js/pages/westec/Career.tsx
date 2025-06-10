@@ -16,7 +16,7 @@ const Career = () => {
                     <>
                         {item?.teams?.length > 0 && (
                             <>
-                                <Headline title={t('Employee Highlights')} />
+                                <Headline title={currentLocale == 'kh' ? item.name_kh : item.name} />
                                 <MySlideCareer teams={item?.teams} />
                             </>
                         )}

@@ -54,7 +54,7 @@ export default function Create({
             title: editData?.title || '',
             title_kh: editData?.title_kh || '',
             link: editData?.link || '',
-            type: editData?.type || 'social_media',
+            type: editData?.type || '',
             order_index: editData?.order_index?.toString() || '',
             status: editData?.status || 'active',
         },
@@ -208,7 +208,7 @@ export default function Create({
                                                 {/* <SelectItem value="link">Link</SelectItem> */}
                                             </SelectContent>
                                         </Select>
-                                        <FormDescription>{t('Choose type (Link) for external content and fill Link input.')}</FormDescription>
+                                        {/* <FormDescription>{t('Choose type (Link) for external content and fill Link input.')}</FormDescription> */}
                                         <FormMessage>{errors.type && <div>{errors.type}</div>}</FormMessage>
                                     </FormItem>
                                 )}

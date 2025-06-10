@@ -17,8 +17,8 @@ const formSchema = z.object({
     name: z.string().max(255).optional(),
     phone: z.string().max(255).optional(),
     email: z.string().max(255).optional(),
-    subject: z.string().max(255).optional(),
-    message: z.string().max(255).optional(),
+    position: z.string().max(255).optional(),
+    career: z.string().max(255).optional(),
 });
 
 export default function Create({
@@ -51,8 +51,8 @@ export default function Create({
             name: editData?.name || '',
             phone: editData?.phone || '',
             email: editData?.email || '',
-            subject: editData?.subject || '',
-            message: editData?.message || '',
+            position: editData?.position?.name || '',
+            career: editData?.career?.name || '',
         },
     });
 
@@ -168,14 +168,14 @@ export default function Create({
                     <div className="col-span-12">
                         <FormField
                             control={form.control}
-                            name="subject"
+                            name="position"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>{t('Subject')}</FormLabel>
+                                    <FormLabel>{t('Position')}</FormLabel>
                                     <FormControl>
-                                        <Input placeholder={t('Subject')} type="text" {...field} />
+                                        <Input placeholder={t('position')} type="text" {...field} />
                                     </FormControl>
-                                    <FormMessage>{errors.subject && <div>{errors.subject}</div>}</FormMessage>
+                                    <FormMessage>{errors.position && <div>{errors.position}</div>}</FormMessage>
                                 </FormItem>
                             )}
                         />
@@ -183,14 +183,14 @@ export default function Create({
                     <div className="col-span-12">
                         <FormField
                             control={form.control}
-                            name="message"
+                            name="career"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>{t('Message')}</FormLabel>
+                                    <FormLabel>{t('Career')}</FormLabel>
                                     <FormControl>
-                                        <AutosizeTextarea className="h-auto" placeholder={t('Message')} {...field} />
+                                        <AutosizeTextarea className="h-auto" placeholder={t('career')} {...field} />
                                     </FormControl>
-                                    <FormMessage>{errors.message && <div>{errors.message}</div>}</FormMessage>
+                                    <FormMessage>{errors.career && <div>{errors.career}</div>}</FormMessage>
                                 </FormItem>
                             )}
                         />

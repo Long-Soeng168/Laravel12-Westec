@@ -89,7 +89,9 @@ class RoleController extends Controller implements HasMiddleware
 
     public function show(Role $role)
     {
-        $role_permission = Permission::select('name', 'id')->groupBy('name')->get();
+         $role_permission = Permission::selectRaw('MIN(id) as id, name')
+            ->groupBy('name')
+            ->get();
 
         $custom_permission = array();
 
