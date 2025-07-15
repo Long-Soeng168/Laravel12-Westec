@@ -1,6 +1,7 @@
 import MyFooter from '@/components/my-footer';
 import { MyNavbar } from '@/components/my-navbar';
 import { Toaster } from '@/components/ui/sonner';
+import { Head } from '@inertiajs/react';
 import { ReactNode } from 'react';
 
 interface LayoutProps {
@@ -10,6 +11,9 @@ interface LayoutProps {
 const WestecLayout = ({ children }: LayoutProps) => {
     return (
         <>
+            <Head>
+                <meta name="robots" content="index, follow" />
+            </Head>
             <div className="bg-white">
                 <header className="sticky top-0 z-50">
                     <MyNavbar />
