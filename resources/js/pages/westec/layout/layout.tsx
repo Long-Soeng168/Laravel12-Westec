@@ -9,16 +9,18 @@ interface LayoutProps {
 
 const WestecLayout = ({ children }: LayoutProps) => {
     return (
-        <div className="bg-white">
-            <header className="sticky top-0 z-50">
-                <MyNavbar />
-            </header>
+        <>
+            <div className="bg-white">
+                <header className="sticky top-0 z-50">
+                    <MyNavbar />
+                </header>
 
-            <main className="mx-auto min-h-screen max-w-[2000px]">{children}</main>
+                <main className="mx-auto min-h-screen max-w-[2000px]">{children}</main>
 
-            <MyFooter />
-            <Toaster />
-        </div>
+                <MyFooter />
+                <Toaster />
+            </div>
+        </>
     );
 };
 

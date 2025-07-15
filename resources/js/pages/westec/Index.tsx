@@ -2,7 +2,7 @@ import { MyClients } from '@/components/my-clients';
 import { MyPartner } from '@/components/my-partner';
 import MySlide from '@/components/my-slide';
 import useTranslation from '@/hooks/use-translation';
-import { usePage } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import BlogsList from './components/blogs-list';
 import { ContactSection } from './components/contact-section';
 import EventList from './components/event-list';
@@ -26,8 +26,31 @@ const Index = () => {
         contact_heading_2,
     } = usePage().props;
     const { t, currentLocale } = useTranslation();
+
+    // Build dynamic meta data based on available props
+    const metaTitle = 'Smart Home & Security Solutions Cambodia';
+    const metaDescription =
+        'Discover our security, smart home and IT solutions in Cambodia. Explore events, news, and partnerships with leading brands.';
+
+    const siteUrl = 'https://westec.com/';
+
     return (
         <WestecLayout>
+            <Head>
+                <title>{metaTitle}</title>
+                <meta name="description" content={metaDescription} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={siteUrl} />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={metaTitle} />
+                <meta name="twitter:description" content={metaDescription} />
+            </Head>
             <MySlide images={banners} />
             {security_detail?.title && <FeatureSection item={security_detail} defaultDropDown={true} />}
             {smart_home_detail?.title && <FeatureSection item={smart_home_detail} defaultDropDown={false} />}

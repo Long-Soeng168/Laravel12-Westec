@@ -1,5 +1,5 @@
 import useTranslation from '@/hooks/use-translation';
-import { usePage } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import { ContactSection } from './components/contact-section';
 import Headline from './components/headline';
 import OurCommitmentCard from './components/our-commitment-card';
@@ -11,8 +11,43 @@ const About = () => {
     const { abouts_detail, why_choose_westec_detail, vision_detail, our_commitment_detail, our_journey_detail, contact_heading_1 } = usePage().props;
     const { t, currentLocale } = useTranslation();
 
+    const siteName = 'Westec Cambodia';
+
+    // Construct title: Use abouts_detail title if available or fallback
+    const metaTitle = abouts_detail?.title ? `${abouts_detail.title} | ${siteName}` : `About Us | ${siteName}`;
+
+    // Construct description: use short description or fallback generic description
+    const metaDescription = abouts_detail
+        ? currentLocale === 'kh'
+            ? abouts_detail.short_description_kh || 'Learn more about Westec Cambodia and our commitment to innovation.'
+            : abouts_detail.short_description || 'Learn more about Westec Cambodia and our commitment to innovation.'
+        : 'Learn more about Westec Cambodia and our commitment to innovation.';
+
+    // Use an image from abouts_detail if available for social preview
+    const ogImage = abouts_detail?.images?.[0]?.image ? `/assets/images/pages/${abouts_detail.images[0].image}` : '/images/default-og-image.jpg';
+
+    const siteUrl = 'https://westec.com/about'; // Update with your real URL
+
     return (
         <WestecLayout>
+            <Head>
+                <title>{metaTitle}</title>
+                <meta name="description" content={metaDescription} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={siteUrl} />
+                <meta property="og:image" content={ogImage} />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={metaTitle} />
+                <meta name="twitter:description" content={metaDescription} />
+                <meta name="twitter:image" content={ogImage} />
+            </Head>
+
             {abouts_detail?.title && (
                 <section className="relative" id={`${abouts_detail?.code}`}>
                     <img
