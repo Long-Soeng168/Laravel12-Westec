@@ -28,7 +28,7 @@ export const MenuItem = ({
       <motion.a
         // href={item.toLowerCase() === "about us" ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
         transition={{ duration: 0.3 }}
-        className="bg-true-primary text-xs whitespace-nowrap 2xl:text-sm 2xl:px-7 px-6 py-0.5 cursor-pointer font-proxima-nova-regular text-white hover:opacity-[0.9] dark:text-white flex gap-0.5 items-center"
+        className="bg-true-primary text-xs whitespace-nowrap 2xl:text-sm 2xl:px-7 px-4 min-[1420px]:px-6 py-1.5 min-[1313px]:py-1 cursor-pointer font-proxima-nova-regular text-white hover:opacity-[0.9] dark:text-white flex gap-0.5 items-center"
       >
         {item}  
         {
